@@ -1,0 +1,5 @@
+GSAP and ScrollTrigger 3.13.0
+Copyright notices are retained in the vendored distribution headers.
+Package-declared license: Standard no-charge license.
+Official license: https://gsap.com/standard-license/
+Source package: https://www.npmjs.com/package/gsap/v/3.13.0

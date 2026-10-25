@@ -1,0 +1,350 @@
+# LeakEvidence — product preview, evidence & validation specification
+
+**Companion to the [website architecture](LeakEvidence-Website-Architecture.md) · 25 October 2026**
+
+All entities, people, measurements, asset identifiers, dates, cases and histories below are invented. They specify a deterministic future demo. They are not records from a utility, actual customers, achieved results, signed agreements or working integrations.
+
+## 1. Product preview scope
+
+Build one isolated, read-only workbench around one district case and a human review decision. The five modules are separately quotable offers, not five generic CRM tabs. The first pilot tests one selected module. The first demo can illustrate the shared evidence chain, with Leak Proof's triage case as the central record.
+
+The workbench exposes intake/source evidence, exceptions, review status, owner and dated next action. It simulates district meter/pressure trends, billing totals, acoustic observations and work-order outcomes. Local reviewer actions can update synthetic review state and create a labeled local export. They cannot command valves, dispatch crews, write back to a utility system, send messages, collect payments or connect production assets.
+
+**Persistent masthead:** DEMO — SYNTHETIC DATA · CONCEPT PREVIEW.
+
+**Control boundary:** Read-only demonstration. No live integrations, writeback, dispatch or pressure-valve commands. Isolation and excavation remain utility-operated.
+
+**Case-status rule:** workflow status and evidence status are different fields. A completed review can still have an unresolved leak hypothesis. A suspected case does not become field-confirmed because a visitor clicks “reviewed,” scrolls a scene or exports a report.
+
+## 2. Screen architecture and state model
+
+| Screen | Layout and essential content | Available actions |
+|---|---|---|
+| `/demo` | Slim module context; case queue on left; fictional district diagram and selected-case summary on right; status counts computed from seed data | Filter, select case, read status legend, reset |
+| `/demo/cases/demo-c01` | Case identity, suspected badge, flow/pressure plot, alternative explanation, evidence/source pane, missingness, analyst note, reviewer, dated task | View source; compare hypothesis; annotate locally; mark field confirmation needed; preview packet |
+| `/demo/report/demo-c01` | Printable folio with persistent watermark, source manifest, units, periods, uncertainty, decision and export metadata | Export local HTML/JSON/CSV packet; reset; return to source |
+| `/demo/evaluation` | Clearly simulated account and pilot-stage deal; buyer/operator/data-owner/crew-supervisor roles; false-alert comparator, AMI permission, paid-trial readiness | Inspect illustrative checklist; toggle local readiness examples; no external update |
+
+Desktop split: approximately 280px queue, flexible work area, 340px source/review pane. On medium screens the source pane becomes a drawer with an obvious close/back control. On mobile: case title → DEMO/status → decision summary → charts → sources → reviewer action → history. Important provenance cannot disappear behind a hover-only tooltip.
+
+**Review states:** pending, blocked, completed, rejected. **Evidence states:** suspected, field-confirmed-simulated, non-leak-comparator, unresolved. **Data quality:** complete, partial, missing, invalid. Text and icons accompany every color.
+
+Reviewer actions require a reason, show validation errors inline, and announce the local result accessibly. “Mark field confirmation needed” creates a task; it does not say a field visit was scheduled. “Export” retains demo labels on every document and row. Reset returns the seed state; no personal information is required to enter the public demo.
+
+Feedback states to design: source missing, empty filter, incomplete annotation, blocked confirmation, completed local review, export ready, export unavailable/error, reset confirmation, no matches and narrow-screen source drawer. Do not use a fake server spinner or say an email was sent.
+
+## 3. Fictional organization, team and scenario
+
+**Account:** Demo Cedar Reach Water Utility. **District:** DEMO-D07, fictional schematic geometry; not a real asset map. **Case:** DEMO-C01. All timestamps use UTC explicitly. **Frozen demo clock:** 2026-10-21 09:00 UTC, regardless of the user's current date.
+
+| Synthetic person | Role | Responsibility |
+|---|---|---|
+| DEMO · Mira Vale | Non-revenue-water manager | Budget/accountability owner; proposed evaluation sponsor |
+| DEMO · Owen Reed | Distribution operations director | Operational accountability; crew-capacity review |
+| DEMO · Tara Sen | Daily operator/analyst | Evidence review and annotations |
+| DEMO · Eli Marsh | Data/integration owner | Permission inventory, source completeness and units |
+| DEMO · Nia Cole | Crew supervisor | Field validation readiness and utility-operated work |
+| DEMO · Alex Rowan | Independent evaluation reviewer | Illustrative blinded comparison review role |
+
+Every displayed person and organization includes a DEMO badge. There are no realistic email addresses, phone numbers or home addresses in the seed data.
+
+### Main event
+
+At 02:00 UTC on 20 October 2026, the synthetic district inlet flow rises from the preceding illustrative readings. One pressure interval is missing, an acoustic note is inconclusive, and a meter-calibration flag remains unresolved. A billing extract covers the previous full day, so it cannot explain or quantify the current intraday event on its own.
+
+**Default finding:** Suspected anomaly. Leakage remains one explanation; inlet meter error and demand/timing changes remain plausible. **Default reviewer decision:** field confirmation needed. No leak is confirmed in this case.
+
+### Small synchronized trend dataset
+
+All measurements are simulated. These values are storyboard inputs, not engineering thresholds or a trained model's outputs.
+
+| Observed at, UTC | Inlet flow, m³/h | Pressure, bar | Quality note |
+|---|---:|---:|---|
+| 2026-10-20 00:00 | 112 | 4.20 | Available |
+| 2026-10-20 00:30 | 110 | 4.18 | Available |
+| 2026-10-20 01:00 | 111 | 4.19 | Available |
+| 2026-10-20 01:30 | 109 | 4.17 | Available |
+| 2026-10-20 02:00 | 138 | 4.05 | Anomaly candidate |
+| 2026-10-20 02:30 | 141 | — | Pressure record missing |
+| 2026-10-20 03:00 | 140 | 4.04 | Available |
+| 2026-10-20 03:30 | 139 | 4.06 | Available |
+
+The first four readings average **110.5 m³/h**; the last four average **139.5 m³/h**. Difference: **29.0 m³/h**. Label it **illustrative observed flow difference**, never verified leakage, saved volume or loss rate. Pressure availability is **7/8 samples (87.5%)** in this tiny example. Do not interpolate the missing interval without marking it.
+
+### Reconciliation specimen
+
+Period: 2026-10-19 00:00–24:00 UTC. Simulated system input: 2,700 m³. Simulated billed authorized consumption: 2,460 m³. Simulated unbilled authorized consumption: 40 m³. Residual for review: **200 m³**. NRW in this specimen is **240 m³**, comprising the 40 m³ unbilled authorized component plus the 200 m³ unresolved residual. The residual is not assigned to real or apparent loss without additional evidence.
+
+This specimen is a separate full-day accounting period from the 20 October flow event. Its separation is intentional: the interface demonstrates the danger of using a misaligned billing period as evidence of a current leak.
+
+### Main evidence manifest
+
+| ID | Synthetic source | Observed period/time | Recorded at, UTC | Key limitation |
+|---|---|---|---|---|
+| DEMO-E01 | inlet-flow.csv, DEMO-M07 | 20 Oct 00:00–03:30 | 20 Oct 04:00 | Unresolved calibration flag |
+| DEMO-E02 | pressure.csv, DEMO-P07 | 20 Oct 00:00–03:30 | 20 Oct 04:05 | One missing value at 02:30 |
+| DEMO-E03 | billing-summary.csv | 19 Oct full day | 20 Oct 06:00 | Different accounting window from event |
+| DEMO-E04 | acoustic-observation.txt, DEMO-A07 | 20 Oct 03:10 | 20 Oct 04:10 | Persistent noise; cause not established |
+| DEMO-E05 | asset-map.json, DEMO-D07 | Map version 18 Oct 12:00 | 20 Oct 04:15 | One branch mapping unresolved |
+| DEMO-E06 | work-order-history.csv | Search through 20 Oct 04:00 | 20 Oct 04:20 | No field-confirmation or repair record for C01 |
+| DEMO-E07 | meter-quality-note.txt | 19 Oct 16:00 | 20 Oct 04:25 | Meter factor requires review |
+
+**Confidence display:** “Moderate evidence support · illustrative analyst assessment.” Show supporting and contradicting reasons. Do not show a fabricated percentage probability. A future probability display requires documented calibration and validation.
+
+## 4. Ten internally consistent sample records
+
+All rows are displayed with DEMO/SIMULATED, fictional organization and district context. Queue counts must be derived from these records: **10 total; 4 pending; 2 blocked; 2 completed; 2 rejected**. Evidence counts: 4 suspected, 2 unresolved, 2 field-confirmed-simulated historical examples, 2 non-leak comparators. Completed case counts are not sales or performance metrics.
+
+| Case | Opened UTC | Workflow / evidence state | Owner | Source reference | Last event UTC | Dated next action |
+|---|---|---|---|---|---|---|
+| DEMO-C01 | 20 Oct 04:30 | Pending / suspected | Tara | E01–E07 | 20 Oct 09:00, competing explanations retained | 22 Oct 09:00, Nia to review field-confirmation requirement |
+| DEMO-C02 | 18 Oct 08:00 | Rejected / non-leak comparator | Tara | E08, meter-service-note | 19 Oct 11:00, apparent anomaly traced to synthetic meter-factor issue | None; closed review |
+| DEMO-C03 | 19 Oct 08:00 | Blocked / unresolved | Eli | E09, permission-register | 19 Oct 10:00, AMI permission unavailable | 22 Oct 10:00, review permission status; no data access |
+| DEMO-C04 | 10 Oct 06:00 | Completed / field-confirmed-simulated | Nia | E10, fictional field note + repair record | 13 Oct 16:00, review complete after 11 Oct field note and 12 Oct repair | None; historical example only |
+| DEMO-C05 | 20 Oct 05:00 | Pending / suspected | Tara | E11, flow-trend | 20 Oct 08:30, nighttime rise flagged | 22 Oct 11:00, compare demand explanation |
+| DEMO-C06 | 19 Oct 07:00 | Blocked / unresolved | Eli | E12, GIS-exception | 20 Oct 08:00, district boundary mismatch | 23 Oct 09:00, reconcile asset mapping |
+| DEMO-C07 | 17 Oct 09:00 | Rejected / non-leak comparator | Tara | E13, billing-period-review | 18 Oct 14:00, period mismatch resolves candidate | None; closed review |
+| DEMO-C08 | 20 Oct 06:00 | Pending / suspected | Tara | E14, acoustic-note | 20 Oct 10:00, ambiguous acoustic evidence | 23 Oct 10:00, request utility review of observation |
+| DEMO-C09 | 8 Oct 08:00 | Completed / field-confirmed-simulated | Nia | E15, field note + repair + follow-up | 15 Oct 16:00, report completed after 9 Oct field note, 10 Oct repair and 11–14 Oct follow-up | None; historical report example only |
+| DEMO-C10 | 20 Oct 07:00 | Pending / suspected | Tara | E16, work-order-comparison | 20 Oct 11:00, source review incomplete | 23 Oct 11:00, complete source comparison |
+
+At least one failed recommendation is explicit: C02's initial leak hypothesis was rejected after the synthetic meter-factor evidence. Historical C04/C09 provide labeled confirmed examples, but neither supplies evidence that C01 is confirmed. The public evaluation account does not represent any confirmed real leak or achieved pilot.
+
+## 5. Data dictionary
+
+| Field | Type / unit | Meaning and validation |
+|---|---|---|
+| `demo_label` | Constant string | `DEMO — SYNTHETIC DATA`; required on every entity/export row |
+| `concept_status` | Enum | `concept_preview`; shown on every screen |
+| `account_id`, `account_name` | String | Fictional utility; IDs begin DEMO |
+| `district_id`, `asset_id` | String | Fictional district/asset; no real coordinates |
+| `case_id`, `offer_id` | String / enum O1–O5 | Stable case and proposed-offer identifiers |
+| `geometry` | Schematic points/lines | Original fictional drawing; never a production GIS map |
+| `event_at`, `observed_at`, `recorded_at` | ISO 8601 UTC | Distinguish event time from ingestion/recording time |
+| `period_start`, `period_end` | ISO 8601 UTC | End after start; compare like accounting periods |
+| `flow_m3h` | Number or null, m³/h | Non-negative illustrative input; missing not zero |
+| `pressure_bar` | Number or null, bar | Preserve missing samples and quality flags |
+| `system_input_m3` | Number or null, m³ | Production/input volume for a defined period |
+| `billed_authorized_m3` | Number or null, m³ | Billed authorized consumption for same period |
+| `unbilled_authorized_m3` | Number or null, m³ | Separate from physical leakage |
+| `unresolved_residual_m3` | Derived number or null | Input minus billed/unbilled authorized; no automatic loss classification |
+| `nrw_m3` | Derived number or null | Input minus billed authorized; not software revenue |
+| `acoustic_observation` | Text + observed_at | Source-linked observation; not an inferred confirmation |
+| `meter_quality_flag` | Enum + note | Calibration/quality issue and evidence reference |
+| `source_id`, `source_file`, `source_locator` | String | Traceable synthetic file plus row/section |
+| `source_quality` | Enum | Complete, partial, missing or invalid |
+| `expected_samples`, `available_samples` | Integer | Missingness denominator explicit; available ≤ expected |
+| `missingness_reason` | Nullable text | Explain absence without inventing a value |
+| `alternative_explanations` | Array | Meter issue, billing lag, demand change, leakage; evidence for/against |
+| `evidence_support` | Enum + rationale | Illustrative low/moderate/high support; not calibrated accuracy |
+| `evidence_state` | Enum | Suspected / unresolved / non-leak-comparator / field-confirmed-simulated |
+| `workflow_state` | Enum | Pending / blocked / completed / rejected, independent of evidence state |
+| `analyst_annotation` | Text + author/time | Local synthetic annotation only |
+| `reviewer_id`, `reviewed_at` | String / timestamp | Named fictional reviewer and decision time |
+| `decision`, `decision_reason` | Enum + text | Human-review result; reason required |
+| `field_note_id`, `repair_record_id` | Nullable source IDs | Required before any simulated field-confirmed/repair narrative |
+| `next_action`, `owner_id`, `due_at` | Text, ID, timestamp | Dated accountability; closed case has no next task |
+| `permission_status` | Enum | Not requested / pending / unavailable / simulated approved; never real permission |
+| `pilot_stage` | Enum | Illustrative discovery, permission review, SOW draft, blocked, etc. |
+| `packet_version`, `exported_at` | Version / timestamp | Identifies local export and included state |
+
+Invalid units or unmatched periods block the relevant comparison. Null data must remain null. Numeric badges, charts, queues and reports derive from the same seed data. Do not maintain a separate decorative screenshot dataset.
+
+## 6. Sample evidence packet — copy-ready content
+
+> **LEAKEVIDENCE · DEMO — SYNTHETIC DATA · CONCEPT PREVIEW**
+>
+> **Review packet DEMO-C01 / version 1.0**  
+> Account: Demo Cedar Reach Water Utility · District DEMO-D07  
+> Review: 20 October 2026, 09:00 UTC · Reviewer: DEMO Tara Sen  
+> State: **Suspected anomaly — field confirmation needed**
+>
+> **Question:** Does the observed district inlet-flow change justify further utility investigation after considering meter error, demand change and billing-period mismatch?
+>
+> **Observed:** In the eight-point illustrative series, average inlet flow changes from 110.5 to 139.5 m³/h. This 29.0 m³/h difference is not a verified leak rate. Pressure evidence has one missing observation. An acoustic note is inconclusive. No field-confirmation or repair record exists for this case.
+>
+> **Alternative explanations:** The meter-quality flag is unresolved. The available billing extract covers 19 October, while the candidate event occurs on 20 October. Demand change has not been excluded.
+>
+> **Evidence support:** Moderate, illustrative analyst assessment; not a calibrated probability. Missing pressure data and unresolved meter quality limit interpretation.
+>
+> **Decision:** Retain the suspected state. Field confirmation is needed before any claim of verified leakage.  
+> **Next action:** DEMO Nia Cole reviews the field-confirmation requirement by 22 October 2026, 09:00 UTC. This is a simulated task, not a dispatch.
+>
+> **Sources:** DEMO-E01–E07, with observed periods, recording timestamps, units, quality flags and locators listed in the attached manifest.  
+> **Exceptions:** Pressure sample missing; meter quality unresolved; asset branch mapping incomplete; billing/event periods differ.
+>
+> **Boundary:** No live integration, operational command, writeback or field action occurs. Utility operators retain isolation, excavation and work authorization. All people, records and measurements in this packet are invented.
+
+Packet order: cover/status → question and decision → source manifest → charts/tables → alternatives and missingness → reviewer history → dated next task → limitations → export metadata. Watermark every page and every data export. A reversible export means the reviewer can read the record and its provenance outside the demo in open formats; it does not mean importing it into operational systems.
+
+## 7. Synthetic evaluation account / CRM specimen
+
+This is a supporting demonstration of qualification, not the main product and not a pipeline claim.
+
+| Field | Initial simulated value |
+|---|---|
+| Deal/account | DEMO-EVAL-01 · Demo Cedar Reach Water Utility |
+| Stage | Discovery complete · permission review pending — illustrative only |
+| Buyer | DEMO Mira Vale, NRW manager |
+| Operations director | DEMO Owen Reed |
+| Operator | DEMO Tara Sen |
+| Data owner | DEMO Eli Marsh |
+| Crew supervisor | DEMO Nia Cole |
+| Selected offer | O3 Leak Proof; other four retained as independent tests |
+| Comparator | Historical utility triage plus known repaired leaks and representative false alerts — proposed |
+| AMI data permission | Not obtained; demo uses synthetic data |
+| Safety/procurement/legal review | Pending, simulated |
+| Paid crew-supervised trial | Not agreed; no payment collected |
+| SOW | Draft discussion only; no signed revenue |
+| Next task | Review dataset permission requirements on 22 Oct 2026 |
+
+Illustrative timeline: 18 Oct account created → 19 Oct buyer/operator roles added → 20 Oct comparator requirements recorded → 20 Oct data permission gap flagged → 22 Oct future review task. Every activity displays DEMO. A toggled “simulated permission approved” state must remain visibly simulated and cannot unlock uploads or connectors.
+
+## 8. Pilot ask, protocol and scorecard
+
+**Buyer-facing pilot ask:**
+
+“Nominate one district, an NRW sponsor, a daily operator, a data owner and a crew lead. Agree a permissioned retrospective comparison using known repaired leaks and representative false alerts. If the comparison warrants proceeding, define a paid, crew-supervised field evaluation with a pre-agreed visit budget and verification criteria.”
+
+### Evaluation sequence
+
+1. **Qualification and manual discovery:** identify the real budget owner, utility/district, current workflow, crew ownership, selected module and willingness to discuss a paid SOW. A waitlist alone is not validation.
+2. **Permission gate before real records:** obtain appropriate procurement, legal, data-sharing and AMI licensing permission. Define access, approved fields, retention, deletion and evaluator roles. No real records enter the public demo.
+3. **Pre-registration:** fix baseline, visit budget K, evaluator, comparison method, observation window, positive/negative sample definition, missing-data treatment, verification cost and failure threshold before scoring.
+4. **Retrospective blind ranking:** hide known outcome labels from the candidate-ranking reviewer; compare with the utility's historical triage on the same eligible cases and budget. Include known repaired leaks and representative false alerts. Keep outcome adjudication separate from ranking.
+5. **Manual review:** inspect discordant cases, exclusion bias, unresolved outcomes and verification burden. Do not cherry-pick easy positives or quietly drop difficult negatives.
+6. **Paid field validation:** proceed only after utility sponsor and crew lead sign a paid SOW and the necessary AMI/pressure data sharing is authorized. The crew supervisor owns permitted field activities; software supplies evidence, not commands.
+7. **Go/no-go:** independently review the precommitted criteria. Pause if permissions, safety sign-off, historical comparator or representative negatives are unavailable. Expand only when field outcomes substantiate value.
+
+### Scorecard template — no achieved values
+
+| Measure / gate | Definition | Value to agree before trial | Result status |
+|---|---|---|---|
+| Crew-visit budget | Same K eligible visits/candidates for both comparisons | K, district, dates | Not evaluated |
+| Precision at K | Field-verified leaks among top-K investigated candidates; unresolved outcomes reported separately with a pre-agreed denominator rule | Minimum acceptable precision and comparator improvement | Not evaluated |
+| Avoided non-leak visits | Baseline non-leak visits minus candidate-workflow non-leak visits under matched budget/method; identify retrospective estimate separately from observed field result | Minimum meaningful difference | Not evaluated |
+| Representative negatives | False alerts/non-leak cases reflect local operating conditions | Sampling criteria, count, exclusions | Not agreed |
+| Verification burden | Crew time, data-review time and cost per adjudicated candidate | Cost ceiling and owner | Not agreed |
+| Missing/unresolved outcomes | Count/rate and reasons; report sensitivity bounds rather than hide them | Treatment and maximum tolerable rate | Not agreed |
+| Baseline integrity | Historical triage method, dates and comparison cohort documented | Named comparator and evaluator | Not agreed |
+| Paid commitment | Distinct qualified utility budget owners proceeding to a signed paid SOW | Qualification definition and observation window | No commitment demonstrated |
+| Permission readiness | Authorized dataset, integration owner, procurement/legal and AMI permissions | Sign-off checklist | No authorization demonstrated |
+| Safety/control boundary | No autonomous control; utility field ownership recorded | Sponsor and crew-lead sign-off | Not assessed |
+
+Report uncertainty and sample size alongside any future precision estimate. A tiny retrospective test does not establish general detection performance. Measure conversion from qualified budget owner to paid commitment separately from technical accuracy. One utility with two stakeholders remains one buying account.
+
+**Automatic failure condition:** suspected alerts are marketed as verified leaks. Other stop conditions: unavailable required permission, unsafe field assumptions, missing historical comparator, unrepresentative negatives or unagreed verification cost. Do not invent numerical pass thresholds for the utility; the SOW must set them before evaluation.
+
+## 9. Form and consent specification
+
+### Paid-evaluation intake
+
+Visible fields: name; work email; organization; role; utility/organization type; number of districts/sites as a range; selected module (all five available, select one first-pilot preference); current workflow; main challenge; pilot timeframe; whether a daily operator, data owner and crew supervisor can participate; permission readiness (unknown/pending/available to discuss); willingness to discuss a paid evaluation; optional non-sensitive context.
+
+First step collects only essential fit/contact fields; the second captures operational readiness. A selection carried from a product page is editable. “I don't know yet” is valid for readiness questions. No upload, account number, production telemetry, personal customer data, passwords or asset credentials.
+
+**Follow-up checkbox, unchecked:** “You may contact me about this evaluation request.”
+
+**Separate optional marketing checkbox, unchecked:** “Send me occasional LeakEvidence product and research updates.”
+
+**Data note:** “Please describe your workflow without uploading utility records or personal data. Any real-data request is reviewed separately for security, legal and procurement permissions.”
+
+**Before a backend is connected:** button says “Preview evaluation request”; result says “Your request has been prepared locally. Nothing has been sent.” Provide a readable local summary and clear return/edit path. Do not display a false thank-you submission or fire a successful lead event.
+
+**After a configured, tested delivery service exists:** button says “Request a paid evaluation”; successful submission says “Your enquiry has been received for manual review. This is not a confirmed pilot, booking or data-sharing agreement.” Error state preserves entries, identifies failed delivery and allows retry. No invented response-time promise.
+
+### Guided demo, contact and waitlist
+
+Guided demo: work email, organization, role, product/full-platform interest, current workflow, consent. Clearly says the walkthrough uses synthetic data. Contact: topic, email, organization, role, message, consent; route data/legal questions for human review when a real recipient is configured.
+
+Optional waitlist: work email, role, organization, sector, district/site count, current workflow, pilot timeframe and permission to follow up, with separate marketing consent. Label as early interest, not customer demand or a paid commitment. Use the same truthful unconnected/connected submission states.
+
+### Sign-in presentation
+
+Visually complete access page with work-email field, prototype validation, privacy/help and “Open synthetic demo.” It explicitly says authentication is not connected. No real password collection, fake emailed magic link, active SSO button or successful sign-in claim. A future connected identity implementation requires its own tested access/recovery states.
+
+### Privacy content requirements
+
+The public demo uses synthetic seed data and local state. Real contact collection must state the actual controller/contact, purposes, configured processors, location/transfer context, retention, deletion route, consent options and analytics behavior. These facts are not supplied yet; the legal copy remains marked draft until completed and reviewed. Do not invent a company address or privacy email. No operational or personal data in analytics. Honor deletion requests through the eventual configured process.
+
+## 10. Copy-ready disclosures
+
+**Hero / demo:** “Concept 36 — website and product preview. Synthetic example records only; not an operating product.”
+
+**Pricing:** “All displayed prices are pilot test hypotheses for discussion. They are not verified market rates, accepted offers or active checkout prices.”
+
+**Product uncertainty:** “A suspected anomaly is not a verified leak. Evidence may be incomplete or support a meter, billing or demand explanation. Utility reviewers own consequential decisions.”
+
+**Control:** “No live integrations, writeback, dispatch or pressure-valve commands. Utility operators own isolation, excavation and field authorization.”
+
+**Source attribution:** “EPA guidance informs the water-audit context. FIDO and Xylem are existing market offerings. These references do not establish LeakEvidence's detection performance or imply endorsement.”
+
+**Research-stage status:** “LeakEvidence is a proposed concept. Customer demand, production integrations, accepted pricing and operating performance have not been demonstrated.”
+
+**Historical branding:** “LeakEvidence is the name selected for this concept specification. Name, domain and legal clearance require separate verification.” Do not publish the old leakwaypoint.com availability observation as current or relevant to the new name.
+
+## 11. Analytics event plan
+
+Instrument only after actual implementation; this document records a plan, not successful tracking. Maintain a separate QA/test flag. Never report preview clicks as paid demand.
+
+| Event | Exact trigger | Allowed properties | Guardrail |
+|---|---|---|---|
+| `page_view` | Actual route shown | Route, sanitized UTM source/campaign, consent state | No form contents, raw query secrets or real asset IDs |
+| `offer_card_view` | At least 50% of card visible for 1 second | Offer ID O1–O5, page, session | Deduplicate per offer/page/session |
+| `demo_open` | Demo route and persistent label rendered | Entry route, selected fictional case, demo version | A demo visit is not an active customer |
+| `pilot_cta` | User activates pilot CTA | Placement, offer ID, sanitized UTM | Click is not form submission |
+| `form_start` | First user field interaction | Form type, entry offer | Do not record the field value |
+| `form_submit` | Confirmed successful delivery from connected service | Form type, non-PII submission ID, consent flags | Never fire for local preview or failed delivery |
+| `meeting_booked` | Confirmed real booking, preferably verified server-side | Booking ID without personal details, source/campaign | Not triggered by scheduling-link click |
+| `demo_review_action` | Deliberate local review action | Fictional case ID, action type, demo version | Always flagged synthetic; separate from buyer commitment |
+| `packet_export` | Local labeled packet prepared/downloaded | Packet version, synthetic case ID | Not a regulatory filing or operational export |
+
+Persist UTM source/campaign through the consented enquiry without adding personal information to URLs. Deduplicate contacts in the restricted lead store using normalized work email; do not send email or a reversible email hash to analytics. Track distinct budget owners, named operators, authorized datasets and willingness to pay separately. Measure qualified meetings and signed paid commitments after they actually occur; raw traffic and waitlist totals remain weak signals.
+
+## 12. Acquisition and ad variants
+
+Acquisition hypothesis: utility associations, state water-loss reporting programs, engineering consultants and AMI installers. Sell to a district-level utility champion with clear crew ownership. Use a visibly synthetic suspected-versus-confirmed district case on LinkedIn. No outreach, account/profile creation or campaign launch is performed by this specification.
+
+### Variant A — buyer job
+
+**Headline:** A flow spike needs an explanation before a crew visit.
+
+**Body:** Leakage, meter error or billing lag? Explore a proposed evidence-review workflow for NRW managers and distribution operations teams. See a synthetic district case, then discuss a bounded paid evaluation.
+
+**CTA:** Review the pilot approach.
+
+**Destination:** `/solutions/non-revenue-water` with campaign/variant attribution.
+
+### Variant B — human-reviewed artifact
+
+**Headline:** Put the sources behind the next field decision.
+
+**Body:** Inspect a simulated LeakEvidence packet with timestamps, missing data, alternative explanations and a named reviewer. Define what a paid, crew-supervised evaluation would need to prove.
+
+**CTA:** Inspect the example packet.
+
+**Destination:** `/resources/example-packet`, with a clear onward pilot CTA.
+
+Both variants target the stated utility buyer group. Ads and thumbnails retain DEMO/SYNTHETIC labeling on any example UI. No savings, accuracy, safety, regulatory certification, customer-traction or investment-return claims. Do not imply partnership with associations, installers, EPA, FIDO or Xylem.
+
+Before any future launch, pre-set a small total spend cap, per-variant allocation, test window, review cadence, qualification rule and stop rule with the owner. Record actual targeting, spend, impressions/clicks, CPC, qualified NRW conversations, consented requests, data-permission readiness and paid trial requests. Pause underperforming spend at the agreed cap. No sample campaign numbers are presented as achieved.
+
+## 13. Screenshot and export production brief
+
+The brief's historical `screenshots/36-website-preview.png` was referenced but was not supplied as a LeakEvidence implementation capture in this task. The attached images are Permra references. Do not treat either the historical assertion or those references as a built LeakEvidence product.
+
+After the isolated demo is built, capture its actual rendering at **1440px desktop width** and **390px mobile width**. Recommended screenshot heights: 1000px desktop and 844px mobile, with additional full-page captures as necessary. Required views: queue/list, opened case with evidence pane and reviewer action, detail/report, and synthetic evaluation account. Capture initial, blocked and local-review feedback states where relevant.
+
+Every frame includes **DEMO — SYNTHETIC DATA** and **CONCEPT PREVIEW**. Charts/reports say illustrative. The district map shows flow, pressure and acoustic hints, confidence rationale, meter-error alternative, field-confirmation loop, source timestamps, uncertainty, reviewer and no-control boundary. Mobile uses a separate layout and safe crop, not a miniature desktop screenshot.
+
+Suggested alt text: “LeakEvidence concept demo showing fictional district DEMO-D07, a suspected anomaly, incomplete pressure evidence, a meter-error alternative and a reviewer task for field confirmation.” For a historical confirmed example, explicitly add “field-confirmed state is simulated.”
+
+Verify text at 100% zoom, exact queue counts, timestamps, units, state consistency, no proprietary logos and no real customer identifiers. Parent/project owner verifies the screenshot and branding before reuse. Generated artwork may illustrate infrastructure; it cannot serve as fabricated evidence of a working UI or integration.
+
+## 14. Later tracking and expansion — retained handoff requirements
+
+Parent-managed tracking only; do not access Notion for this workstream. Preserve these fields for later: idea number; working title; buyer/budget owner; operator; hypothesis; five offer IDs; price hypotheses; source links; contact consent; interview date; permissioned dataset status; baseline/evaluator/threshold; paid SOW status; integration owner; safety boundary; regulatory review; demo URL; screenshot verification; name/domain verification; traffic cohort/spend; qualified meetings; decision; next action.
+
+Million-dollar-product reasoning is an internal hypothesis, not a homepage revenue claim. Size later from verified buyer count × tested annual contract value × reachable share, then account for services and integration costs. Never turn water-loss volume, sector expenditure or equipment capex into software revenue. Consider AMI analytics and capital-replacement prioritization only if field outcomes support expansion.
+
+The public website carries the buyer-relevant scope, five offers, prices-as-hypotheses, evidence examples, limitations and paid ask. Internal ad operations, tracking schemas and revenue-model notes remain preserved here for the builder; they are not presented as achieved company facts or exposed as a fake customer-facing operational backend.

@@ -1,0 +1,7 @@
+# Hostinger Apache/LiteSpeed: static HTML, no PHP or Node runtime needed.
+DirectoryIndex index.html
+Options -Indexes
+ErrorDocument 404 /404.html
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>

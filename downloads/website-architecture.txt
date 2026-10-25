@@ -1,0 +1,419 @@
+# LeakEvidence — website architecture & creative direction
+
+**Concept 36 · Energy, industry & resilience · Specification v1 · 25 October 2026**
+
+**Recommended direction: The Evidence Atlas.** An editorial, motion-rich water-utility website that turns a district anomaly into a traceable, human-reviewed evidence packet. Warm paper, mineral green, copper annotations, original infrastructure imagery, and precise product interfaces establish the identity.
+
+This deliverable specifies the website and isolated product preview. It is not a website build, deployed product, validated company, or demonstration of operational performance. The $100,000 ambition informs craftsmanship and completeness; it is not a published product price, valuation, or substantiated sales outcome.
+
+Read alongside [the product and validation specification](LeakEvidence-Product-and-Validation.md) and [the coverage and reference register](LeakEvidence-Coverage-and-References.md).
+
+## 1. Decisions and requirement precedence
+
+Your current request establishes **LeakEvidence** as the company name and asks for IA and website structure. Your master guide governs the depth of architecture, branding, page coverage, visual variety, and motion. The supplied concept brief supplies the buyer, five offers, workflows, proposed prices, and factual boundaries.
+
+The guide itself says the brief normally takes precedence; your explicit instruction reverses that ordering for this project. Therefore the architecture is a complete multi-page experience, with a dedicated page for every offer, rather than the brief's minimal single landing page. The brief's truthfulness and human-review requirements remain compatible with that broader architecture.
+
+Historical references to Water Loss Agent, Leak Waypoint, and leakwaypoint.com remain in the provenance register only. Public-facing naming uses LeakEvidence. No domain ownership, trademark clearance, incorporation, team, funding, or customer identity is inferred. Module suffixes from the brief remain intact: Leak Desk, Leak Review, Leak Proof, Leak Signal, Leak Report.
+
+The pasted execution instructions describe future implementation and evaluation. They do not trigger account creation, Notion access, advertising, deployment, procurement, or production-data access in this specification task.
+
+### Positioning record
+
+| Item | Decision |
+|---|---|
+| Category | Proposed water-loss evidence and evaluation platform for water utilities |
+| Budget/accountability owner | Non-revenue-water manager at a water utility |
+| Executive/operational co-owner | Distribution operations director |
+| Daily user | Named utility analyst/operator; crew supervisor involved in field validation |
+| Data stakeholder | Named data/integration owner; AMI, billing, GIS and pressure permissions |
+| Job | Separate suspected leakage from metering/billing explanations and prioritize evidence for human review |
+| Wedge | Isolated read-only demonstration, followed by a manually assisted, independently reviewed paid evaluation |
+| Vision | Utility teams reconcile water balances and field evidence before allocating repair crews |
+| Mission | Help utility teams move from fragmented evidence to defensible human-approved decisions, with provenance and explicit uncertainty |
+| Primary conversion | Request a paid evaluation |
+| Secondary conversion | Explore the simulated demo |
+| Evidence state | Research-stage concept; local detection performance and demand remain unproven |
+| Expansion hypothesis | Land in one utility/district; consider AMI analytics and capital replacement prioritization only after substantiated field outcomes |
+
+Energy and industrial resilience is the sector context. The launch website targets water utilities. Engineering consultants and AMI installers are acquisition/referral channels, not additional validated buyer segments.
+
+## 2. Reference study: what transfers to LeakEvidence
+
+The four supplied screenshots and sampled frames spanning all three supplied recordings were inspected. Live Permra navigation, headings and hero compositions were also inspected across the homepage, platform/product overview, three products, solutions, security, docs, pricing, company, contact, sign-in, request-access and funding pages. This is a visual/content study, not a frame-accurate reverse-engineering of its animation code.
+
+| Reference observation | LeakEvidence adaptation |
+|---|---|
+| Atmospheric opening scene followed by a more concrete product story | Open directly on a fictional water-district cutaway, with the buyer, job and CTA already visible; no compulsory second introduction |
+| Large serif display type, italic emphasis, compact sans-serif UI | Editorial Newsreader headlines; Manrope for body/UI; IBM Plex Mono for timestamps and evidence IDs |
+| A metaphorical illustration and a floating functional interface | Original infrastructure cutaway plus an attached case summary, connected by evidence markers |
+| Pale backgrounds change across narrative chapters | Paper → mist green → pale copper → dark mineral → paper; each change signals a different task |
+| Approval sequence progresses laterally through tall panels | One horizontal evidence journey with five distinct documentary scenes; avoid copying the reference's pastel card composition |
+| Dark revocation scene provides a strong visual interruption | Dark human-review boundary chapter with a schematic separation between evidence software and utility operations |
+| Sticky header, chapter navigation and top progress indicator | Compact header and named chapter rail on spacious desktops; mobile has a simple chapter menu |
+| Product pages have specific hero objects and related-product links | Five different hero mechanisms, a common information contract, and context-aware onward links |
+| Docs, pricing, auth and request pages feel designed | Documentation-style methodology, a five-offer quotation ledger, calm access screen, and focused pilot intake |
+
+Do not reuse the gate, door, stamp, receipt ribbon, mountain bridge, illustrations, screenshots, map assets, card geometry, logo, copy or claimed metrics. The reference's funding, location, integrations and trust claims belong to its site and have no bearing on LeakEvidence.
+
+Some sampled transitions show low-opacity or temporarily sparse content during rapid scrolling. LeakEvidence's main copy and conversion controls must remain useful when animation is loading, interrupted or disabled.
+
+## 3. Brand foundation before detailed design
+
+Three distinct territories were considered within your reference-led brief:
+
+| Territory | Signature composition | Character | Decision |
+|---|---|---|---|
+| **The Evidence Atlas** | Original district cutaways, survey drawings and annotated case folios | Editorial, exact, grounded, calm | Recommended: best fit for rich section variety and an evidence-led utility story |
+| The Instrument Room | Large metering instruments, calibration marks, waveform surfaces and monochrome photography | Industrial, technical, austere | Strong alternative, but less suited to the requested light editorial atmosphere |
+| The Watershed Observatory | Expansive landscape imagery, contour fields and map-to-district zooms | Environmental, cinematic, spatial | Strong opening, but risks suggesting geographic coverage or environmental outcomes without evidence |
+
+### Identity specification
+
+**Brand character:** observant, accountable, composed, technically literate, field-aware.
+
+**Signature object:** a district evidence folio. It begins as a small case identifier in the hero, becomes the anchor for source comparison, and ends as an exportable review packet. It is an original editorial/device system, not a reproduction of Permra's receipt ribbon.
+
+**Logo concept:** an open survey frame containing a short pipe-line elbow and a separate evidence point. Keep the point detached to represent a finding awaiting review. Avoid a shield, certification seal, checkmark or generic water-drop mark that suggests a verified claim. Wordmark: LeakEvidence, one word, with optical spacing and a restrained custom terminal detail.
+
+**Logo production deliverables for the design phase:** original vector mark; horizontal and compact lockups; dark, reversed and monochrome variants; clear space of one evidence-point diameter on every side; tests at 24px symbol height and 140px wordmark width. No legal-clearance claim.
+
+**Favicon:** simplify the survey frame and point, removing fine pipe detail. Deliver SVG, multi-size ICO, 16/32/48px PNG, 180px Apple touch icon and 192/512px manifest icons. Test against both browser themes. These are production requirements, not assets already created in this specification.
+
+### Palette and typography
+
+| Role | Proposed value | Application |
+|---|---|---|
+| Paper | `#F5F2EA` | Primary canvas |
+| Porcelain | `#FCFBF7` | UI surfaces and readable document panels |
+| Mineral ink | `#182F2C` | Headings, primary buttons, dark chapters |
+| Deep mineral | `#102724` | Immersive review-boundary scene and footer |
+| Mist | `#DEE8E2` | Solution and reconciliation chapters |
+| Copper | `#A64F35` | Editorial emphasis, active annotation and selected route |
+| Pale copper | `#F0DED3` | Hypothesis/problem surfaces |
+| Muted text | `#52625D` | Secondary copy; verify on each actual surface |
+| Border | `#C7CEC6` | Dividers, table rules and card edges |
+| Suspected | `#765315` on `#F3E6C5` | Triangle icon + “Suspected” label |
+| Field-confirmed simulation | `#24533F` on `#E1EDE5` | Solid marker + “Field-confirmed · simulated” |
+| Blocked | `#8F3333` on `#F5E2DF` | Stop icon + reason |
+| Focus | `#005E75` | High-contrast 2px focus outline with offset |
+
+These are proposed tokens. Contrast must be measured in the actual implementation; do not treat this table as a passed accessibility audit.
+
+Use **Newsreader** for editorial headlines, 400–500 weights and occasional italic emphasis of at most one short phrase. Use the **Google Fonts OFL release of Manrope** for body/UI, 400–700. Use **IBM Plex Mono** for IDs, timestamps and small data labels, 400–500. Retain the license included with each installed file; Manrope's designer-distributed V5 has different terms from the Google Fonts release. Official font sources are in the reference register.
+
+Desktop: homepage H1 72–92px, inner-page H1 56–76px, H2 44–60px, body 18px/1.6, UI 14–16px. Mobile: H1 40–48px, H2 32–38px, body 16–18px. Keep marketing paragraphs near 55–70 characters per line. Product tables use tabular numerals and minimum 14px text; do not apply display-serif styling to dense data.
+
+### Layout and fine detail
+
+Use a 12-column desktop grid, 1280px content width, 1440px wide visual canvas, 64px desktop gutters, 32px tablet gutters and 20px mobile gutters. Reading pages use a 720px text measure. Spacing scale: 4/8/12/16/24/32/48/64/96/128. Large chapter padding: 96–144px desktop, 56–80px mobile. Desktop header: approximately 76px; mobile: approximately 64px.
+
+Buttons are 48px high minimum, with stable labels, 18–24px horizontal padding, 6px radius and a masked arrow moving 4px on hover/focus. Primary button: mineral ink with paper text; hover changes the fill and arrow, not the button's position. Secondary: outlined; tertiary: underlined text. Show pressed, focus, loading, unavailable, error and success states.
+
+Product panels use a copper edge trace and relevant diagram highlight on hover/focus. No repeated 3D tilts. Image media can reveal an annotated detail through a clipped mask, while labels stay fixed. UI surfaces use 1px borders and restrained two-layer shadows; paper textures stay below roughly 3% visible contrast behind text. Navigation opens on click and keyboard, with hover as an enhancement.
+
+Icons: a consistent 1.5–1.75px stroke family; 20px controls, 24px features, original module symbols. Status requires text and shape as well as color. Include official LinkedIn and Crunchbase icons in the footer as accessible inactive indicators until verified company URLs are supplied; no unrelated links or `#` placeholders.
+
+## 4. Information architecture
+
+### Primary navigation
+
+**Products · Platform · Solutions · Evaluation · Resources · Company**
+
+Utility actions: **Sign in** and **Request a paid evaluation**. Pricing is prominently linked within Products and Evaluation and in the footer. At intermediate widths, collapse the navigation before labels collide.
+
+Products mega menu: all five names, one-line jobs, proposed-module label and direct links; a left editorial panel links to the full portfolio. Platform menu: overview, capabilities, data readiness and trust. Evaluation menu: protocol, evidence/results, pricing hypotheses and pilot intake. Resources menu: methodology, data dictionary, example packet and sources. Company menu: mission/about and contact.
+
+Mobile menu preserves all destinations in labeled accordion groups. Open/close state, Escape, focus return, visible close control and 44px minimum targets are required.
+
+### Sitemap
+
+```text
+LeakEvidence
+├── /                                  Home
+├── /problem                           Why water-loss decisions need better evidence
+├── /products                          Five proposed modules
+│   ├── /products/leak-desk             Audit data reconciliation
+│   ├── /products/leak-review           District anomaly watch
+│   ├── /products/leak-proof            Evidence-led leak triage
+│   ├── /products/leak-signal           Repair-priority route & work packet
+│   └── /products/leak-report           Post-repair verification
+├── /platform                          Shared evidence workbench
+│   └── /platform/capabilities          Provenance, exceptions, annotations, review, export
+├── /solutions                         Utility workflow overview
+│   ├── /solutions/non-revenue-water    NRW manager
+│   └── /solutions/distribution-operations  Operations director & crew coordination
+├── /evaluation                        Pilot protocol and decision gates
+├── /evidence                          Evaluation design & results status
+├── /pricing                           Five price hypotheses / separately quotable offers
+├── /request-evaluation                Paid-evaluation qualification form
+├── /request-demo                      Guided walkthrough request
+├── /demo                              Isolated synthetic workbench
+│   ├── /demo/cases/demo-c01            Open case, sources and local reviewer action
+│   ├── /demo/report/demo-c01           Labeled review packet
+│   └── /demo/evaluation                Synthetic account and pilot-stage record
+├── /trust                             Data access, control boundary and limitations
+├── /data-readiness                     Proposed inputs and permission requirements
+├── /resources                         Resources index
+│   ├── /resources/methodology          Audit context and loss categories
+│   ├── /resources/data-dictionary      Public synthetic schema
+│   ├── /resources/example-packet       Annotated example artifact
+│   └── /resources/sources             Attribution and evidence limits
+├── /company                           Vision, mission and research-stage status
+├── /contact                           General, procurement and data-review enquiries
+├── /sign-in                           Complete access presentation; demo boundary
+├── /access-help                       Access/recovery information
+├── /legal/privacy                     Privacy notice / draft status until reviewed
+├── /legal/terms                       Concept/demo terms / draft status until reviewed
+├── /accessibility                     Accessibility and motion controls
+└── /*                                 Branded 404 with recovery paths
+```
+
+`/results` may redirect to `/evidence`, `/integrations` to `/data-readiness`, and `/about` to `/company`. Redirects preserve familiar journeys without creating duplicate thin pages. No funding/news or customer-logo page is planned without factual material. Optional waitlist is a section of the evaluation form, not a competing top-level destination.
+
+The two persona pages serve stakeholders within the same utility buying group. They must not be added together as separate demand counts.
+
+### Core journeys
+
+| Visitor intent | Connected journey | Completion |
+|---|---|---|
+| NRW manager assessing fit | Home → Leak Desk/Leak Proof → example packet → pricing → evaluation request | A consented, reviewable enquiry with selected module |
+| Operations director protecting crew capacity | Operations solution → Leak Signal → demo case → pilot protocol | Named crew owner and agreed validation discussion |
+| Data/integration owner assessing feasibility | Platform → data readiness → trust → dictionary → contact | Permission and data-quality review; no public upload |
+| Curious visitor | Home → isolated demo → report → reset/return → guided demo request | Clear understanding of synthetic state and human decision |
+| Returning prospect | Sign in → concept-access explanation → demo or access help | No false successful authentication |
+| Qualified evaluator | Offer → artifact → qualification → manual discovery → authorized retrospective comparison → paid SOW → go/no-go | Paid commitment and permission tracked separately |
+
+## 5. Homepage — copy, composition and scroll choreography
+
+The homepage contains 13 substantive chapters plus the footer. Most use ordinary vertical flow. Only the evidence journey is a long horizontal pinned sequence; one shorter workbench sequence can pin on tall desktops. The five offers appear before either long sequence, so visitors can assess the suite quickly.
+
+### 01 — Hero: a district beneath the surface
+
+**Eyebrow:** WATER-LOSS EVIDENCE FOR UTILITY TEAMS · CONCEPT PREVIEW
+
+**H1:** Separate suspected leaks from verified loss before sending a crew.
+
+**Body:** For non-revenue-water managers and distribution operations directors. LeakEvidence is a proposed read-only workbench for comparing district flow, pressure, acoustic observations and billing evidence—so your team can review the next step with its sources and uncertainty attached.
+
+**Primary CTA:** Request a paid evaluation → `/request-evaluation`.
+
+**Secondary CTA:** Explore the simulated demo → `/demo`.
+
+**Visible supporting line:** DEMO · SIMULATED DATA. Research-stage concept; not an operating product.
+
+**Visual:** an original axonometric cutaway of a fictional district, with pale limestone streets and a mineral-green buried pipe network. One copper marker connects to a compact case fragment: “Suspected · meter error not excluded · field confirmation needed.” Source timestamp and no-control label are readable. A second field-confirmed marker is explicitly simulated and belongs to a different historical example.
+
+**Motion:** headline/CTA readable immediately; terrain gently resolves, then the source annotation draws in. Scroll moves from the broad district to the chosen evidence point without revealing a fictional underground leak as fact. No automatic “leak detected” toast. An optional 6–8 second ambient loop has Pause; it never gates content. Mobile uses a composed still with stacked case fragment and visible watermark.
+
+### 02 — Credibility through inspectable evidence
+
+**Headline:** See what the decision is made of.
+
+Use a wide editorial strip showing source reference, missingness, alternative explanation, reviewer and next action. This is an evidence checklist, not a customer-logo bar. CTA: Inspect an example packet. Tiny source note links to methodology, with a clear distinction between audit guidance and product performance.
+
+**Visual/motion:** five baseline-aligned annotations appear around one document edge. Paper surface, no duplicated cards. Reveal once as a group; retain the full state on upward scroll.
+
+### 03 — Problem: one spike, competing explanations
+
+**Headline:** A flow spike is a question—not a conclusion.
+
+**Copy:** Leakage, meter error and billing lag can create competing explanations. False alerts consume scarce crew capacity and make genuine loss harder to investigate.
+
+**Visual:** three aligned evidence tracks on pale copper: district flow, meter-quality exception and billing-period alignment. Include an honest data gap. Alternative labels are “Suspected leakage,” “Meter issue” and “Timing mismatch”; none is silently selected as truth.
+
+**Motion:** a vertical cursor reveals the same interval across all three tracks. Clicking a track exposes a plain-language evidence note. Mobile stacks charts with the shared timestamp repeated; data table always available.
+
+### 04 — Product portfolio: five discrete offers
+
+**Headline:** Five focused offers. One reviewable evidence trail.
+
+All five products appear with a concise job, original mini-visual, output, proposed price and page link. Desktop uses an editorial 3+2 arrangement, with equal typographic baselines and independent compositions inside the visuals. Mobile stacks five complete panels. The names and prices are not hidden in a carousel or hover state.
+
+Every panel carries **Proposed module · price test hypothesis**. The five cards below are copy-ready.
+
+| Product | Copy | Output | Price hypothesis | CTA |
+|---|---|---|---|---|
+| **LeakEvidence Leak Desk** | Reconcile production and billing volumes before interpreting the gap. Surface period mismatches, missing records and questionable inputs for audit review. | Reconciliation worksheet and exception register | **$3,000 / utility** | Explore Leak Desk |
+| **LeakEvidence Leak Review** | Watch a district-meter anomaly in context. Compare flow and pressure patterns while keeping data gaps and alternative explanations visible. | Timestamped anomaly watchlist | **$500 / month / district** | Explore Leak Review |
+| **LeakEvidence Leak Proof** | Bring pressure, acoustic observations and work-order evidence into one case. Review the leak hypothesis alongside meter and billing alternatives. | Human-reviewed triage packet | **$1,500 / month / district** | Explore Leak Proof |
+| **LeakEvidence Leak Signal** | Prepare a repair-priority route and reviewed work packet for utility consideration. Keep crew ownership and field-confirmation needs attached. | Draft route and reviewed ticket packet; no dispatch | **$50 / reviewed ticket** | Explore Leak Signal |
+| **LeakEvidence Leak Report** | Compare post-repair volumes with the agreed baseline and document limitations. Assemble evidence for utility and regulatory review. | Quarterly verification evidence report | **$2,000 / quarter** | Explore Leak Report |
+
+Price footnote: **Indicative pilot hypotheses for discussion—not active offers, verified market rates or accepted prices. Scope, data permissions, service effort and commercial terms require a written agreement.** The quarterly reporting scope must specify the utility/district coverage in that agreement; the brief does not establish it.
+
+“Leak Proof” is a module name, not a promise that suspected leakage has been proven. Pair the name with its evidence-led triage descriptor wherever ambiguity is possible. “Regulator-ready” means organized for review against an agreed requirement; no regulatory acceptance or certification is implied.
+
+### 05 — Horizontal chapter: follow the evidence
+
+**Headline:** Follow one anomaly from observation to review.
+
+On desktops at least 1100px wide and 800px tall, the section pins below the header for approximately 240vh of scroll. Five labeled scenes move horizontally across one continuous document canvas. The title, chapter count, DEMO label and “Skip walkthrough” link remain fixed. Buttons allow direct scene selection.
+
+| Progress | Scene | Unique visual and state |
+|---|---|---|
+| 0–20% | Observe | District contour map with amber suspected marker; source ID follows it |
+| 20–40% | Reconcile | Two measurement ledgers align by period; mismatch stays outlined |
+| 40–60% | Compare | Evidence fan: flow trace, pressure gap, acoustic observation, work-order reference |
+| 60–80% | Review | Compact decision desk with reviewer, alternatives and “Field confirmation needed” |
+| 80–100% | Prepare | Review packet assembles with provenance and an explicit no-control boundary |
+
+Scrolling tells the story; it never changes a reviewer decision or turns a suspected case into a verified one. Up-scroll retraces the presentation only. Mobile, short screens and reduced-motion settings show five vertical illustrated sections with the same content. No forced horizontal wheel capture or drag-only navigation.
+
+### 06 — Shared platform: the evidence stays attached
+
+**Headline:** A shared case, from source to review.
+
+**Visual:** a sectional folio on mist green: intake, evidence, exceptions, annotations, decision and export. Five module tabs highlight which part each offer contributes to. Lines connect to explicit attachment ports, not decorative floating nodes.
+
+**Copy:** Every proposed module uses the same case identity, timestamps, evidence references and review record. A missing source remains visible. A reviewer decision retains its rationale.
+
+**Motion:** tabs illuminate a short relevant path; no constantly circulating data. CTA: Explore the platform. Show “Proposed architecture · no production connectors.”
+
+### 07 — Product in action: work the case
+
+**Headline:** A useful next step begins with an honest exception.
+
+**Visual:** a real interface to be built in the later prototype phase: queue → opened case → evidence pane → local reviewer action. Use the exact fictional case in the companion specification. The default decision is field confirmation needed; acoustic evidence is ambiguous and pressure coverage is incomplete.
+
+**Interaction:** view source, compare alternative, mark field confirmation needed, preview packet, reset demo. These controls update local synthetic state only. A short desktop sticky narrative can switch the displayed pane; actual state-changing controls require deliberate clicks. CTA: Open the full simulated workbench.
+
+### 08 — Use cases: one buying group, different responsibilities
+
+**Headline:** Built around the people accountable for the next visit.
+
+**Visual:** an editorial utility field notebook with two facing spreads. NRW spread: reconcile the loss picture and review the candidate queue. Operations spread: check evidence, crew owner and next action. A narrow supporting rail identifies the operator, crew supervisor and data owner.
+
+No generic persona avatars or invented testimonials. The two major role links lead to their solution pages. Background returns to paper, with a small original field-equipment illustration. Tabs work by touch and keyboard.
+
+### 09 — Human responsibility and honest limits
+
+**Headline:** Evidence informs. Utility operators decide.
+
+**Visual:** deep-mineral chapter, original pipe cross-section on one side and evidence folio on the other. A clear labeled boundary separates the software proposal from utility-operated isolation, excavation and dispatch. No animated valve, pressure-control button or glowing “autonomous” pathway.
+
+Use separate columns for **Data access**, **Physical/control responsibility**, **Commercial constraints**, and **Evidence gaps**. Include AMI licensing, sparse telemetry, inconsistent GIS and billing, public tenders, labor capacity, incumbent sensor contracts, representative negatives and verification cost. CTA: Read scope and limitations.
+
+Motion traces the read-only intake route and stops at the reviewer boundary. Static text explicitly says: “No pressure-valve commands. No live writeback or dispatch. Isolation and excavation remain utility-operated.”
+
+### 10 — Evaluation evidence, not unsupported results
+
+**Headline:** Define success before the field trial.
+
+**Visual:** a scorecard ledger with blank result cells, “Not evaluated” states, a baseline column and a protocol column. The ledger explains precision at an agreed crew-visit budget and avoided non-leak visits. Avoid animated performance counters.
+
+**Copy:** Start with blind ranking of known repaired leaks and representative false alerts from one district. Pre-agree the comparator, evaluator, observation window, cost of verification and failure threshold. Field validation requires permission and a paid crew-supervised trial.
+
+CTA: Review the evaluation protocol. An adjacent “Research questions” note covers what utility interviews must establish; it is not formatted as a testimonial.
+
+### 11 — Commercial entry
+
+**Headline:** Start with one district and one separately scoped offer.
+
+**Visual:** open quotation sheet with five module rows, their exact price hypotheses and a selected-offer edge marker. This is a commercial summary distinct from the visual product cards. No annual toggle, “most popular,” discount, checkout or guaranteed savings.
+
+CTA: Discuss a paid evaluation. Supporting link: See pricing hypotheses. Explain that a first pilot selects one module; the five offers are not five mandatory bundles or CRM tabs.
+
+### 12 — Questions before the pilot
+
+Accessible two-column FAQ on porcelain. Include: Does the demo use live utility data? Can it confirm a leak? Does it control valves? What inputs are needed? Who must participate? Are these prices active? How is success assessed? What happens if permissions or comparators are missing? How do production connectors differ from the demo? Can we export the packet?
+
+Answers remain concise and link to deeper pages. Expand/collapse uses roughly 180–240ms movement and no layout jump of the question itself. Anchor links open the relevant answer.
+
+### 13 — Final pilot ask
+
+**Headline:** Bring one district. Define the evidence together.
+
+**Copy:** Nominate your NRW sponsor, daily operator, data owner and crew lead. We’ll review fit, permissions and a bounded comparison before agreeing a paid evaluation.
+
+**CTA:** Request a paid evaluation. Secondary: Request a guided demo. Optional waitlist link sits below, clearly described as early interest rather than validation.
+
+**Visual:** a quiet, large-scale aerial contour illustration with one unlabeled district boundary and a document tab marked “Evaluation scope.” No real geography or utility branding. The final CTA remains static while the outline draws once.
+
+### Footer
+
+Deep mineral, spacious typography, LeakEvidence wordmark, concept-stage description, complete links to five products, platform, solutions, evaluation, pricing, resources, company, contact, demo and legal. LinkedIn/Crunchbase are inactive until verified. No invented address, phone, email, customer logo or funding claim. Footer includes motion settings and “Concept preview · synthetic product examples.”
+
+## 6. Dedicated-page design contracts
+
+Every product page contains a specific hero, buyer/job, input requirements, workflow, capabilities, sample artifact, exception state, human boundary, price hypothesis, evaluation criteria, FAQ, related product and CTA. The shared information model does not imply identical layouts.
+
+| Route / hero copy | Composition and page sequence | Distinct motion |
+|---|---|---|
+| `/products/leak-desk` — **Reconcile the balance before chasing the gap.** | Large split-volume ledger on paper; periods/units → source inventory → reconciliation worksheet → exceptions → review output → $3,000 hypothesis → evaluation | Columns align along a date ruler; unresolved difference stays hatched, never becomes “leak volume” |
+| `/products/leak-review` — **Keep the anomaly in context.** | Wide pressure/flow instrument panel on mist; district definition → baseline selection → sparse-data state → watchlist → human review → $500 hypothesis | Shared time cursor, baseline band and visible gaps; no fake live pulse |
+| `/products/leak-proof` — **Bring competing explanations into the same case.** | Asymmetric copper-toned evidence table; pressure/acoustic/work-order inputs → source comparison → alternatives → reviewer action → packet → $1,500 hypothesis | Sources enter from their actual attachment positions; alternative explanation remains alongside leak hypothesis |
+| `/products/leak-signal` — **Give the crew a reviewed starting point.** | Wide fictional route drawing beside a compact work packet; triage inputs → proposed priority → crew ownership → route constraints → draft packet → $50 hypothesis | Route segments draw sequentially, ending at “Utility review”; no dispatch animation or implied travel-time optimization |
+| `/products/leak-report` — **Keep verification attached to the repair.** | Portrait report spread with aligned pre/post windows; field-confirmation source → repair record → baseline/comparability → post-repair volume → caveats → $2,000 hypothesis | Periods align and report annotations appear; no savings counter or implied causal proof |
+
+### Other pages: individual hero and content plan
+
+| Page | Hero / visual | Required content and conversion |
+|---|---|---|
+| Problem | **A district anomaly can hide more than one explanation.** Three evidence bands on pale copper | Real vs apparent losses and unbilled authorized consumption; fragmented workflow; false alerts; missing data; current alternatives; solutions CTA |
+| Products | **Five offers for the work between signal and evidence.** Oversized numbered module index with five different mini-artifacts | Full inventory, relationships, separately quotable scopes, first-pilot selection, all product links and intake |
+| Platform | **One case. Every source, exception and decision.** Layered folio on warm white | Proposed architecture; read-only inputs; shared case model; five module contributions; provenance; reviewer; export; no-control boundary |
+| Capabilities | **Make every finding inspectable.** Evidence inspector with enlarged timestamp/annotation details | Source linking, timestamp normalization, missingness, alternative explanations, annotations, review history, reversible export; link each capability to its module |
+| Solutions | **A shared evidence trail for utility decisions.** Two aligned notebook spreads | Buyer and operator responsibilities; two persona pathways; district champion; acquisition partners described as channels; no merged demand claims |
+| NRW solution | **Know which part of the loss picture needs review.** Water-balance worksheet | Budget ownership; audit reconciliation; triage queue; proposed Leak Desk/Review/Proof; price and pilot criteria; NRW-specific form default |
+| Operations solution | **Prepare the visit with its evidence attached.** Original tool/field-packet still life and draft route | Crew capacity, supervisor ownership, confirmed versus suspected, work-packet review, isolation/excavation boundary; Signal/Report links |
+| Evaluation | **Agree the test before judging the result.** Vertical protocol timeline with permission gates | One-district blind ranking, representative negatives, baseline, independent evaluator, paid SOW, crew-supervised validation, scorecard and go/no-go |
+| Evidence | **The evidence we have—and the evidence still needed.** Open scorecard with “Not evaluated” result cells | Research supports workflow and existing offerings; local detection remains untested; synthetic example separated from pilot results; no invented customer stories |
+| Pricing | **Five scopes to discuss. One pilot to define.** Editorial quotation ledger | Exact five prices/units; scope inclusions, unknown service/integration costs, procurement questions, no active checkout; selected-offer intake |
+| Request evaluation | **Start with one district and a named team.** Light form over a deep-mineral side panel | Qualification, selected module, roles, permission readiness, follow-up consent, separate marketing consent, next steps, truthful submission states |
+| Request demo | **Walk through the evidence before planning a trial.** Static case-detail crop alongside form | Work email, organization, role, product/full-suite interest, current workflow, contact consent; synthetic walkthrough explanation; no booked meeting until confirmed |
+| Trust | **The boundary is part of the product.** Read-only system boundary diagram | Actual demo behavior; data permissions; physical authority; commercial limits; future security review; no certification or deployed security claims |
+| Data readiness | **Start with permission, periods and provenance.** Source inventory manifest | AMI licensing, pressure sparsity, GIS mismatch, billing quality, acoustic/work-order formats, missingness; future connectors labeled planned, not live |
+| Resources | **A working library for evidence-led evaluation.** Numbered editorial index | Four complete resources with reading summaries and source status; no fabricated blog feed |
+| Methodology | **Water loss is an accounting and field-evidence problem.** Accessible water-balance diagram | EPA context; real/apparent loss; authorized unbilled use; audit → intervention → evaluation; product inference distinguished from source facts |
+| Dictionary | **Know what each field means.** Readable schema specimen | Field, type, unit, source, timestamp, missingness, validation rule; downloadable synthetic schema in later build |
+| Example packet | **A decision with its working attached.** Annotated report spread | Source list, alternatives, reviewer, next action, limits, DEMO watermark; demo report link |
+| Sources | **Context, attribution and limits.** Quiet bibliographic layout | Official EPA/FIDO/Xylem sources, date checked, what each supports; vendor descriptions do not validate LeakEvidence |
+| Company | **Water decisions should stay accountable to people.** Original utility field-notebook illustration | Vision, mission, specific buyer, research-stage status, product principles, expansion hypothesis labeled; no invented team, headquarters, traction or funding |
+| Contact | **Talk about the workflow, the data or the evaluation.** Quiet paper panel with topic navigation | Topic, work email, organization, role, message and consent; operational-data warning; procurement/data-review paths |
+| Sign in | **Your evidence workspace.** Static cropped district folio on dark side; calm access panel | Explicit “Access preview—authentication is not connected”; locally validated form representation, demo access, access help and privacy; no fake SSO |
+| Access help | **Find the right access path.** Simple document key illustration | Prototype limitation, demo link, request access/contact; no fake password-reset email success |
+| Privacy/terms | **How this concept handles information.** Readable legal layout with date/status | Actual collection, purpose, storage/provider/retention/deletion details when configured; draft status until legal review; synthetic-demo and use boundaries |
+| Accessibility | **A readable experience at every pace.** Type and focus specimen | Motion preference, keyboard/navigation guidance, readable chart/table alternatives, contact path; no untested conformance claim |
+| 404 | **This route has no record.** Incomplete contour line, static | Home, products and demo links; preserve useful navigation |
+
+Resource/legal/access pages use restrained entry transitions and readable long-form layouts. They do not need cinematic pinning. The demo pages use purposeful UI state changes rather than marketing scroll effects.
+
+## 7. Motion implementation and responsive rules
+
+Use React/TypeScript with multi-page routing in the later build; GSAP ScrollTrigger for coordinated sequences. Lenis is an optional desktop enhancement after native-scroll behavior is proven. It must not replace native touch scrolling or force smooth motion under reduced-motion settings. No implementation has been carried out in this phase.
+
+| Pattern | Trigger / timing target | Reverse behavior | Accessible fallback |
+|---|---|---|---|
+| Headline entrance | Initial render or section near viewport; 500–650ms, ≤80ms line stagger | Once; stays visible | Visible final text from first render |
+| Diagram path | Section enters; 700–1000ms | Entrance retains final state | Complete labeled diagram |
+| Hover/focus | 160–220ms fill/edge/arrow | Returns smoothly | Same emphasis on keyboard focus; tap selection |
+| Evidence horizontal sequence | Section scroll progress, ~240vh desktop | Presentation retraces; stored decisions untouched | Five vertical scenes; direct chapter controls |
+| Case walkthrough | ≤150vh sticky scene on suitable desktop | Pane selection may follow scroll; reviewer action does not | Stacked panes and normal UI controls |
+| Scene background | Crossfade over a section boundary, without fading body copy | Reverses with boundary | Solid distinct surfaces |
+| Chart comparison | Explicit selector or timeline cursor | Deterministic selected interval | Labeled table and text summary |
+| Route/page transition | 180–250ms optional fade | No inherited stale pin state | Immediate native navigation |
+
+**At 1440px:** wide story compositions and side chapter rail. **At 1024px:** two-column content where readable, remove horizontal pinning and rail. **At 768px:** simplify artwork and stack forms. **At 390px:** full-width copy, vertically stacked evidence, persistent demo/status labels. Also test 320px and short desktop viewports.
+
+Maintain meaningful DOM order through transformations. Keyboard focus must never travel into visually offscreen horizontal panels without bringing the selected panel into view. Provide “Skip walkthrough” before the pinned region. Avoid nested scroll traps. Anchor headings use header offset. On upward scroll, scenes return predictably without re-running form or review actions.
+
+Honor reduced motion with complete content, no parallax, no pinning and no smooth-scroll enforcement. Ambient effects stop when offscreen or the tab is hidden. No continuous counters, particles or mock telemetry. Images reserve dimensions; video gets a poster and controls; substantial art loads after first useful text. UI text must remain actual HTML, not baked into imagery.
+
+## 8. Asset plan and future production sequence
+
+| Asset | Purpose | Required source/form |
+|---|---|---|
+| Brand mark, wordmark, favicon | Identity across pages/browser | Original editable SVG and export set |
+| District cutaway | Hero and contextual geography | Original illustration or generated non-UI artwork, not a competitor map |
+| Three-track anomaly graphic | Problem chapter | Editable SVG/HTML using explicit synthetic values |
+| Five product artifacts | Product identity and capabilities | Five different structured visuals, matched to the module |
+| Evidence journey | Horizontal story | Five original scenes sharing a case identifier |
+| Boundary schematic | Trust and human responsibility | Accessible SVG/HTML with explicit labels |
+| Field notebook/tool still life | Buyer/operations/company context | Original or properly licensed imagery, no claimed customer site |
+| Product screenshots | Honest product evidence | Actual browser captures of the later built demo; no generated UI screenshot |
+| Social preview | Sharing | Branded 1200×630 image with concept-stage label |
+
+Future production order: brand assets → synthetic data/states → homepage and five product wireframes → shared platform and buyer journeys → route-complete build → motion → forms/auth presentation → browser captures → accessibility/content/performance QA → authorized GitHub/Vercel/domain handoff → deployed review. Production-data integration remains a separate permissioned project.
+
+Completion means every required page and CTA works as described, all five offers remain distinct, all visual labels are honest, all claims match evidence, and responsive/motion behavior has been tested. A polished specification is not a passed website QA report.

@@ -1,0 +1,200 @@
+{
+  "demo_label": "DEMO \u2014 SYNTHETIC DATA",
+  "concept_status": "concept_preview",
+  "account": "Demo Cedar Reach Water Utility",
+  "district": "DEMO-D07",
+  "clock": "2026-10-21T09:00:00Z",
+  "cases": [
+    {
+      "id": "DEMO-C01",
+      "workflow": "pending",
+      "evidence": "suspected",
+      "owner": "Tara Sen",
+      "title": "Flow rise / competing explanations",
+      "sources": "E01\u2013E07",
+      "last_event": "2026-10-20 09:00 UTC",
+      "due": "2026-10-22 09:00 UTC",
+      "next_action": "Nia Cole to review field-confirmation requirement"
+    },
+    {
+      "id": "DEMO-C02",
+      "workflow": "rejected",
+      "evidence": "non-leak-comparator",
+      "owner": "Tara Sen",
+      "title": "Meter-factor issue",
+      "sources": "E08",
+      "last_event": "2026-10-19 11:00 UTC",
+      "due": null,
+      "next_action": "Closed review; initial leak hypothesis rejected"
+    },
+    {
+      "id": "DEMO-C03",
+      "workflow": "blocked",
+      "evidence": "unresolved",
+      "owner": "Eli Marsh",
+      "title": "AMI permission unavailable",
+      "sources": "E09",
+      "last_event": "2026-10-19 10:00 UTC",
+      "due": "2026-10-22 10:00 UTC",
+      "next_action": "Review permission; no data access"
+    },
+    {
+      "id": "DEMO-C04",
+      "workflow": "completed",
+      "evidence": "field-confirmed-simulated",
+      "owner": "Nia Cole",
+      "title": "Historical field-note example",
+      "sources": "E10",
+      "last_event": "2026-10-13 16:00 UTC",
+      "due": null,
+      "next_action": "11 Oct field note; 12 Oct repair; historical only"
+    },
+    {
+      "id": "DEMO-C05",
+      "workflow": "pending",
+      "evidence": "suspected",
+      "owner": "Tara Sen",
+      "title": "Nighttime flow rise",
+      "sources": "E11",
+      "last_event": "2026-10-20 08:30 UTC",
+      "due": "2026-10-22 11:00 UTC",
+      "next_action": "Compare demand explanation"
+    },
+    {
+      "id": "DEMO-C06",
+      "workflow": "blocked",
+      "evidence": "unresolved",
+      "owner": "Eli Marsh",
+      "title": "District boundary mismatch",
+      "sources": "E12",
+      "last_event": "2026-10-20 08:00 UTC",
+      "due": "2026-10-23 09:00 UTC",
+      "next_action": "Reconcile asset mapping"
+    },
+    {
+      "id": "DEMO-C07",
+      "workflow": "rejected",
+      "evidence": "non-leak-comparator",
+      "owner": "Tara Sen",
+      "title": "Billing-period mismatch",
+      "sources": "E13",
+      "last_event": "2026-10-18 14:00 UTC",
+      "due": null,
+      "next_action": "Closed review; period mismatch resolves candidate"
+    },
+    {
+      "id": "DEMO-C08",
+      "workflow": "pending",
+      "evidence": "suspected",
+      "owner": "Tara Sen",
+      "title": "Ambiguous acoustic evidence",
+      "sources": "E14",
+      "last_event": "2026-10-20 10:00 UTC",
+      "due": "2026-10-23 10:00 UTC",
+      "next_action": "Review acoustic observation"
+    },
+    {
+      "id": "DEMO-C09",
+      "workflow": "completed",
+      "evidence": "field-confirmed-simulated",
+      "owner": "Nia Cole",
+      "title": "Historical post-repair report",
+      "sources": "E15",
+      "last_event": "2026-10-15 16:00 UTC",
+      "due": null,
+      "next_action": "9 Oct field note; 10 Oct repair; 11\u201314 Oct follow-up"
+    },
+    {
+      "id": "DEMO-C10",
+      "workflow": "pending",
+      "evidence": "suspected",
+      "owner": "Tara Sen",
+      "title": "Source review incomplete",
+      "sources": "E16",
+      "last_event": "2026-10-20 11:00 UTC",
+      "due": "2026-10-23 11:00 UTC",
+      "next_action": "Complete source comparison"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "DEMO-E01",
+      "file": "inlet-flow.csv",
+      "observed": "20 Oct 00:00\u201303:30",
+      "recorded": "20 Oct 04:00 UTC",
+      "limitation": "Meter calibration unresolved"
+    },
+    {
+      "id": "DEMO-E02",
+      "file": "pressure.csv",
+      "observed": "20 Oct 00:00\u201303:30",
+      "recorded": "20 Oct 04:05 UTC",
+      "limitation": "02:30 sample missing"
+    },
+    {
+      "id": "DEMO-E03",
+      "file": "billing-summary.csv",
+      "observed": "19 Oct full day",
+      "recorded": "20 Oct 06:00 UTC",
+      "limitation": "Different accounting window"
+    },
+    {
+      "id": "DEMO-E04",
+      "file": "acoustic-observation.txt",
+      "observed": "20 Oct 03:10",
+      "recorded": "20 Oct 04:10 UTC",
+      "limitation": "Persistent noise; cause not established"
+    },
+    {
+      "id": "DEMO-E05",
+      "file": "asset-map.json",
+      "observed": "18 Oct 12:00 map version",
+      "recorded": "20 Oct 04:15 UTC",
+      "limitation": "One branch unresolved"
+    },
+    {
+      "id": "DEMO-E06",
+      "file": "work-order-history.csv",
+      "observed": "Search through 20 Oct 04:00",
+      "recorded": "20 Oct 04:20 UTC",
+      "limitation": "No field confirmation for C01"
+    },
+    {
+      "id": "DEMO-E07",
+      "file": "meter-quality-note.txt",
+      "observed": "19 Oct 16:00",
+      "recorded": "20 Oct 04:25 UTC",
+      "limitation": "Meter factor requires review"
+    }
+  ],
+  "flow": [
+    112,
+    110,
+    111,
+    109,
+    138,
+    141,
+    140,
+    139
+  ],
+  "pressure": [
+    4.2,
+    4.18,
+    4.19,
+    4.17,
+    4.05,
+    null,
+    4.04,
+    4.06
+  ],
+  "times": [
+    "00:00",
+    "00:30",
+    "01:00",
+    "01:30",
+    "02:00",
+    "02:30",
+    "03:00",
+    "03:30"
+  ]
+}

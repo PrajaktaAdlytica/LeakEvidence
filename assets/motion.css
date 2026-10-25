@@ -1,0 +1,12 @@
+/* No CSS-only hidden content: the unenhanced and reduced-motion site is complete. */
+html.lenis,html.lenis body{height:auto}
+html.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.motion-word-mask{display:inline-block;vertical-align:top;overflow:clip;padding:.12em .08em .2em;margin:-.12em -.08em -.2em}
+.motion-word{display:inline-block}
+.reading-progress{position:fixed;inset:0 0 auto;height:3px;z-index:1000;pointer-events:none;transform-origin:left;background:linear-gradient(90deg,#b45634,#d6b36b,#769f88)}
+.scroll-choreography .section,.scroll-choreography .closing,.scroll-choreography .anomaly-section,.scroll-choreography .inner-hero{overflow-x:clip}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.reading-progress{display:none}}
+.reduce-motion{scroll-behavior:auto!important}.reduce-motion .reading-progress{display:none}
+@media print{.motion-word{transform:none!important;opacity:1!important}.reading-progress{display:none}[style*="opacity"]{opacity:1!important;clip-path:none!important;translate:none!important}}

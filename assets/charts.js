@@ -1,0 +1,16 @@
+(() => {
+  const data={flow:[112,110,111,109,138,141,140,139],pressure:[4.20,4.18,4.19,4.17,4.05,null,4.04,4.06],leak:[28,30,29,35,33,40,36,42,39,45,40,41],meter:[20,20,20,20,38,38,38,38,38,38,38,38],timing:[18,22,26,30,34,31,47,28,25,30,32,26]};
+  const times=['00:00','00:30','01:00','01:30','02:00','02:30','03:00','03:30'];
+  function render(scope=document){
+    if(!window.Chart)return;
+    scope.querySelectorAll('canvas[data-chart]').forEach(canvas=>{
+      if(Chart.getChart(canvas))return;
+      const kind=canvas.dataset.chart,mini=['leak','meter','timing'].includes(kind),pressure=kind==='pressure';
+      const color=mini?(kind==='meter'?'#e4d6bb':'#e3976b'):(pressure?'#92703f':'#ad5439');
+      const labels=mini?data[kind].map((_,i)=>String(i+1)):times;
+      const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches||document.documentElement.classList.contains('reduce-motion');
+      new Chart(canvas,{plugins:pressure?[{id:'missingness',afterDraw(chart){const {ctx,chartArea,scales}=chart;const x=scales.x.getPixelForValue(5);ctx.save();ctx.fillStyle='#ad7c3b12';ctx.fillRect(x-15,chartArea.top,30,chartArea.height);ctx.strokeStyle='#ad7c3b';ctx.setLineDash([3,4]);ctx.beginPath();ctx.moveTo(x,chartArea.top+20);ctx.lineTo(x,chartArea.bottom);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#86602e';ctx.font='10px Manrope';ctx.textAlign='center';ctx.fillText('Missing 02:30',x,chartArea.top+11);ctx.restore();}}]:[],type:kind==='timing'?'bar':'line',data:{labels,datasets:[{label:mini?'Illustrative pattern':pressure?'Pressure · bar':'Flow · m³/h',data:data[kind],borderColor:color,backgroundColor:kind==='timing'?data[kind].map((_,i)=>i===6?'#e3976b':'#7a9a85'):(mini?'#d5e8da13':'#b2c8ba26'),fill:!pressure&&kind!=='meter',borderWidth:mini?1.8:2,pointRadius:mini?0:3,pointHoverRadius:5,pointBackgroundColor:color,pointBorderColor:mini?'#153a31':'#fcfbf7',pointBorderWidth:1.5,tension:mini&&kind==='leak'?.25:0,stepped:kind==='meter',spanGaps:false}]},options:{responsive:true,maintainAspectRatio:false,animation:reduced?false:{duration:650},interaction:{intersect:false,mode:'index'},plugins:{legend:{display:false},tooltip:{enabled:true,backgroundColor:'#17372f',titleFont:{family:'Manrope',size:11},bodyFont:{family:'Manrope',size:11},padding:12,displayColors:false,callbacks:{title:items=>mini?'Illustrative pattern · not a measured result':items[0].label+' UTC · 20 Oct 2026',label:item=>item.raw===null?'Missing sample':mini?'Illustrative value: '+item.raw:((pressure?'Pressure: ':'Flow: ')+Number(item.raw).toFixed(pressure?2:0)+(pressure?' bar':' m³/h'))}}},scales:{x:{grid:{color:mini?'#adc8b31f':'#233e3010',drawTicks:false},border:{display:false},ticks:{display:!mini,color:'#627267',font:{family:'IBM Plex Mono',size:10},maxRotation:0,maxTicksLimit:4,padding:10}},y:{min:mini?0:pressure?4:100,max:mini?55:pressure?4.25:150,border:{display:false},grid:{color:mini?'#adc8b340':'#233e3019',drawTicks:false},ticks:{display:!mini,color:'#627267',font:{family:'IBM Plex Mono',size:10},maxTicksLimit:4,padding:10,callback:v=>pressure?Number(v).toFixed(2):v}}}}});
+    });
+  }
+  window.LeakEvidenceCharts={render};document.addEventListener('DOMContentLoaded',()=>render());
+})();
