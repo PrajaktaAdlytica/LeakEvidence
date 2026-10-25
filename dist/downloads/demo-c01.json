@@ -1,0 +1,102 @@
+{
+  "demo_label": "DEMO \u2014 SYNTHETIC DATA",
+  "concept_status": "concept_preview",
+  "account": "Demo Cedar Reach Water Utility",
+  "district": "DEMO-D07",
+  "clock": "2026-10-21T09:00:00Z",
+  "cases": [
+    {
+      "id": "DEMO-C01",
+      "workflow": "pending",
+      "evidence": "suspected",
+      "owner": "Tara Sen",
+      "title": "Flow rise / competing explanations",
+      "sources": "E01\u2013E07",
+      "last_event": "2026-10-20 09:00 UTC",
+      "due": "2026-10-22 09:00 UTC",
+      "next_action": "Nia Cole to review field-confirmation requirement"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "DEMO-E01",
+      "file": "inlet-flow.csv",
+      "observed": "20 Oct 00:00\u201303:30",
+      "recorded": "20 Oct 04:00 UTC",
+      "limitation": "Meter calibration unresolved"
+    },
+    {
+      "id": "DEMO-E02",
+      "file": "pressure.csv",
+      "observed": "20 Oct 00:00\u201303:30",
+      "recorded": "20 Oct 04:05 UTC",
+      "limitation": "02:30 sample missing"
+    },
+    {
+      "id": "DEMO-E03",
+      "file": "billing-summary.csv",
+      "observed": "19 Oct full day",
+      "recorded": "20 Oct 06:00 UTC",
+      "limitation": "Different accounting window"
+    },
+    {
+      "id": "DEMO-E04",
+      "file": "acoustic-observation.txt",
+      "observed": "20 Oct 03:10",
+      "recorded": "20 Oct 04:10 UTC",
+      "limitation": "Persistent noise; cause not established"
+    },
+    {
+      "id": "DEMO-E05",
+      "file": "asset-map.json",
+      "observed": "18 Oct 12:00 map version",
+      "recorded": "20 Oct 04:15 UTC",
+      "limitation": "One branch unresolved"
+    },
+    {
+      "id": "DEMO-E06",
+      "file": "work-order-history.csv",
+      "observed": "Search through 20 Oct 04:00",
+      "recorded": "20 Oct 04:20 UTC",
+      "limitation": "No field confirmation for C01"
+    },
+    {
+      "id": "DEMO-E07",
+      "file": "meter-quality-note.txt",
+      "observed": "19 Oct 16:00",
+      "recorded": "20 Oct 04:25 UTC",
+      "limitation": "Meter factor requires review"
+    }
+  ],
+  "flow": [
+    112,
+    110,
+    111,
+    109,
+    138,
+    141,
+    140,
+    139
+  ],
+  "pressure": [
+    4.2,
+    4.18,
+    4.19,
+    4.17,
+    4.05,
+    null,
+    4.04,
+    4.06
+  ],
+  "times": [
+    "00:00",
+    "00:30",
+    "01:00",
+    "01:30",
+    "02:00",
+    "02:30",
+    "03:00",
+    "03:30"
+  ],
+  "warning": "Synthetic data only. Observed flow difference is not verified leakage. No field confirmation exists for C01."
+}

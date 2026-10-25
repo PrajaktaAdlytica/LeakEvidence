@@ -1,0 +1,217 @@
+# LeakEvidence — coverage, references & acceptance register
+
+**Specification audit · 25 October 2026**
+
+This register maps the supplied material to the [architecture](LeakEvidence-Website-Architecture.md) and [product/validation specification](LeakEvidence-Product-and-Validation.md). “Specified” means included in planning; it does not mean implemented, tested or deployed.
+
+## 1. Brief-to-website coverage
+
+| Supplied requirement | Homepage placement | Dedicated page / flow | Visual or implementation evidence required later |
+|---|---|---|---|
+| LeakEvidence company name | Header, hero, footer | All routes | Correct logo, titles and metadata; historical names absent from public copy |
+| Energy/industry/resilience sector | Hero/category context | Company, solutions | Utility-specific visuals; no generic energy-market claim |
+| NRW manager and distribution director | Hero, roles, final ask | Two solution pages, qualification | Named roles and distinct account-level qualification |
+| Daily operator, crew and data owner | Roles, pilot ask | Evaluation, intake, synthetic evaluation account | Four responsibilities visible; buyer/co-owner relationship clear |
+| Procurement/legal permission before real records | Limits, pilot | Trust, evaluation, data readiness | Permission gate; no public upload |
+| Do not merge adjacent demand counts | Evaluation evidence | Analytics/validation handoff | Utility account deduplication; channels separate from buyers |
+| Buyer pain: leaks vs metering/billing errors | Problem | Problem and all related modules | Competing evidence traces; no automatic leak conclusion |
+| EPA audit guidance | Credibility/source note | Methodology and sources | Direct attribution; no endorsement badge |
+| FIDO, Xylem and existing alternatives | Limits/context | Problem, sources, evaluation FAQ | Neutral text comparison; no unsupported advantage claim |
+| Acoustic logger vendors, consultants, audits, crew knowledge | Problem/FAQ | Problem and methodology | Current workflow described, not dismissed |
+| Utility associations, state programs, consultants, AMI installers | Partner-channel context where relevant | Contact/solutions; acquisition handoff | No partnership logos without permission |
+| Audit reconciliation offer | Product suite | Leak Desk | Dedicated ledger visual; $3,000/utility hypothesis |
+| District anomaly watch offer | Product suite | Leak Review | Time-aligned watchlist; $500/month/district hypothesis |
+| Leak triage offer | Product suite, demo | Leak Proof | Pressure/acoustic/work-order case; $1,500/month/district hypothesis |
+| Repair-priority route/work packet offer | Product suite | Leak Signal | Draft route and reviewed ticket; $50/reviewed ticket hypothesis |
+| Post-repair verification offer | Product suite | Leak Report | Baseline/comparability/report; $2,000/quarter hypothesis |
+| Five offers separately quotable, not CRM tabs | Products, commercial summary | Products, pricing and product-aware forms | All five names, descriptions, prices and page links |
+| Proposed module names | Product panels | Five product pages | Leak Desk / Leak Review / Leak Proof / Leak Signal / Leak Report preserved |
+| Old Leak Waypoint identity/domain | No public claim | Specification provenance | Historical note retained, no availability inference for LeakEvidence |
+| Hero tagline | Hero | Product positioning | Exact core thesis retained |
+| Vision and mission | Company context | Company | Clear accountable utility workflow, explicit uncertainty |
+| Research-stage/not validated company status | Hero/footer | Company, trust, evidence | No fake customers, demand, revenue, deployment or accepted price claims |
+| No unvalidated savings guarantee | Commercial summary | Pricing, ads, evidence | Claims audit |
+| Source-linked case, timestamps and missingness | Credibility/workbench | Demo case, dictionary, packet | Matching evidence manifest, quality flags, real HTML UI |
+| Annotations, alternatives, reviewer and export | Workbench | Demo case/report | Local reviewer action; labeled open-format packet |
+| Simulated meter/pressure/billing/acoustic/work-order inputs | Problem/demo | Demo, dictionary | Consistent seed data and visible source times |
+| District map and suspected vs verified badges | Hero/demo | Demo and screenshot suite | Fictional schematic; simulated status labels; distinct case provenance |
+| Confidence and meter-error alternative | Problem/demo | Case and packet | Rationale-based confidence; no invented calibrated accuracy |
+| Field-confirmation loop | Evidence journey | Demo, evaluation | Main case remains suspected; actual human decision required in future pilot |
+| No pressure-valve control | Limits | Trust, demo, packet | No control buttons or animated command flows |
+| Sparse telemetry, GIS/billing quality, AMI licenses | Limits | Data readiness and trust | Data-quality/permission states separate from physical constraints |
+| Public tenders, labor capacity, sensor incumbency | Limits/FAQ | Pricing, evaluation | Procurement and feasibility requirements |
+| High evidence for audit need/products; low local performance evidence | Evidence chapter | Evidence and sources | Not-evaluated scorecard; no inferred detection results |
+| Representative negatives and verification cost gap | Evaluation | Protocol, pilot scorecard | Sampling plan and verification cost agreed before trial |
+| Retrospective blind ranking | Evaluation | Evaluation | Known repaired leaks and false alerts, blinded outcome labels |
+| Signed sharing + paid supervised field validation | Pilot ask | Intake → permission review → SOW | Sponsor/crew lead, AMI/pressure authorization, paid agreement |
+| Precision at visit budget / avoided non-leak visits | Scorecard | Evidence, evaluation | Matched comparator, evaluator, window, threshold and unresolved-case policy |
+| Failure if suspected marketed as verified | Limits | All demo/status content | State invariants and claims check |
+| Pause if permission/safety/comparator absent | Pilot gate | Evaluation and internal workflow | Explicit blocked state and reason |
+| One module first; district-led expansion | Commercial summary | Pricing, evaluation | Selected offer preserved; expansion conditional on evidence |
+| AMI and capital replacement expansion hypothesis | Not a current product claim | Company future direction; internal handoff | Clearly proposed, no invented extra live products |
+| Million-dollar reasoning / no water volume as revenue | No revenue counter | Internal validation handoff | Verified buyer × tested ACV × reachable share; cost adjustment |
+| Fake CRM/account/roles/case/timeline/task/deal | Supporting demo link | `/demo/evaluation` | Every entity DEMO; no confirmed actual leak or signed revenue |
+| False-alert comparator, supervisor, AMI permission, paid trial | Pilot section | Evaluation account | Readiness values explicitly simulated/unobtained |
+| 8–12 realistic fictional records | Demo preview | Demo queue | Ten records with 4/2/2/2 workflow counts and dated histories |
+| Pending/blocked/completed/rejected and failed recommendation | Demo | Queue and case | C02 rejected meter hypothesis; sources chronological |
+| Reversible reviewer export | Workbench | Demo report and example packet | Local HTML/JSON/CSV retains labels and provenance |
+| Optional waitlist with explicit consent | Final ask secondary link | Evaluation form | Required fields, separate marketing choice, no demand overclaim |
+| Page/offer/demo/pilot/form/meeting events | No public implementation detail | Analytics plan | Exact triggers, UTM, deduplication, no PII/operational values |
+| Job-message versus artifact-message ads | Not a homepage section | Acquisition handoff | Two truthful variants, buyer-specific destinations, capped future test |
+| Responsive screenshots from built UI | Hero/workbench once built | Product pages/resources/demo | Actual 1440px and 390px captures, alt text, no AI-generated UI evidence |
+| Watermark/provenance/no control on mobile | Every product visual | Demo/mobile pages | Persistent labels and readable timestamps at 100% zoom |
+| Original diagrams/text/assets, no competitor copying | All chapters | All routes | Asset/license register and source attribution |
+| Historical screenshot assertion | No fabricated replacement | Screenshot-production notes | Original file not provided; new actual capture required after build |
+| Parent owns name/domain/screenshot verification | No ownership claim | Handoff checklist | Owner verification before publication |
+| Notion tracking fields later; no access now | Not public navigation | Product/validation handoff §14 | All requested fields retained; no Notion activity |
+| Definition of done for spec | N/A | All three specification files | Populated required sections; no website/Notion activity |
+
+## 2. Master-guide coverage and deliberate adaptations
+
+| Guide requirement | How the plan handles it |
+|---|---|
+| Branding first | Identity, logo/favicons, semantic palette, type, icons and asset production gate precede high-fidelity implementation |
+| Distinct identity across portfolio | Evidence Atlas direction; original water infrastructure and document system; no reused Permra identity |
+| Complete multi-page company website | Full sitemap covers problem, solutions, portfolio, five products, platform, capabilities, evidence, pricing, forms, access, company, trust and resources |
+| Every product on home and dedicated route | Five visible homepage panels, mega menu, product index, dedicated pages, pricing rows and form options |
+| Product screenshots, use cases, about/contact and CTAs | Assigned routes, screen requirements and conversion journeys |
+| Results/stats/testimonials coverage | Evaluation scorecard and evidence-status page preserve proof coverage. No testimonials were requested or supplied; use explicit research questions, not invented quotes |
+| Pricing matching commercial model | Five supplied units and hypotheses retained; no invented subscription tiers or annual discount |
+| Guided demo and self-serve demo | Separate `/request-demo` and clearly labeled isolated `/demo`, as the brief expressly calls for an interactive preview |
+| Complete sign-in presentation | Branded access page, field validation/help and honest disconnected state; no fake authentication |
+| Trust/integrations | Trust and data-readiness routes distinguish proposed inputs from live connectors; `/integrations` redirect avoids false integration catalogue |
+| LinkedIn/Crunchbase footer marks | Accessible inactive state until actual profile URLs are verified; no account creation |
+| Section-specific visual and animation | Homepage storyboard plus per-page hero/visual matrix and motion rules |
+| Horizontal and vertical scrolling | One controlled horizontal evidence chapter; ordinary vertical flow, short sticky case sequence, static mobile/reduced-motion equivalents |
+| Hover/focus/pressed/loading/error/success | Component-state specification and form/demo behavior |
+| React, GSAP/ScrollTrigger, Lenis | Planned future stack with Lenis conditional on accessibility/device suitability; no code written in spec phase |
+| Responsive, keyboard and reduced motion | Breakpoints, focus behavior, skip controls, chart tables and short-screen fallback |
+| QA, build, GitHub/Vercel/domain | Future acceptance and release gates; not claimed complete in this planning deliverable |
+| No default favicon/builder marks | Explicit production QA gate; original brand assets required |
+| Claim accuracy | Research, supplied requirements, design proposals, synthetic records and unknowns kept distinct |
+
+The brief's “one clear landing page” is expanded into a complete site under your explicit master-guide preference. Its content sequence and conversion logic remain in the homepage. Internal campaign operations, later Notion schema and revenue reasoning are retained as handoff specifications rather than published as misleading customer-facing proof.
+
+## 3. Reference observation log
+
+### Supplied media
+
+| File | Coverage inspected | Useful observation |
+|---|---|---|
+| Screen Recording 2026-10-25 at 17.51.10.mov | 48.035s; frames spanning 0–48s at roughly 3s intervals | Atmospheric intro → product hero → comparative problem diagram → layered scopes → horizontal approvals → dark revocation → audit → teams/trust/CTA/footer; product-menu navigation and supporting product sections |
+| Screen Recording 2026-10-25 at 17.52.11.mov | 4.905s; 0s, 2s and 4s frames | Product menu → audit hero with document illustration → yellow capability chapter |
+| Screen Recording 2026-10-25 at 17.52.29.mov | 21.637s; frames spanning 0–20s at 2s intervals | Solutions bands → dark security hero and system boundary → documentation → pricing → sign-in → access form |
+| Screenshot 17.57.44 | Supplied hero screenshot | Serif/italic headline, large scene illustration, floating decision UI, fixed navigation and chapter rail |
+| Screenshot 17.57.54 | Supplied approval screenshot | Horizontal sequence, large cards, shared baseline and varied pale surfaces |
+| Screenshots 17.57.57 and 17.58.00 | Same dark chapter at two moments | Background remains visually dominant while headline/UI enter with translation, fade and angle changes |
+
+Sampling supports the composition, sequence and visible transitions. It does not establish exact scroll distances, animation durations, source library choices or every intermediate frame. LeakEvidence motion values are proposed design specifications.
+
+### Live public routes inspected
+
+| Route | Takeaway |
+|---|---|
+| [Homepage](https://www.permra.com/) | Intro and main story are separate; rich numbered chapters and complete navigation |
+| [Product overview](https://www.permra.com/product) | Shared system overview links separate product responsibilities |
+| [Scopes](https://www.permra.com/product/scopes) | Layer illustration and policy specimen; capabilities and related-product onward navigation |
+| [Approvals](https://www.permra.com/product/approvals) | Human-action illustration, route specimen, role/context story |
+| [Audit](https://www.permra.com/product/audit) | Document illustration with attached evidence UI and portability story |
+| [Solutions](https://www.permra.com/solutions) | Editorial hero and separate colored persona sections |
+| [Security](https://www.permra.com/security) | Dark hero, diagram, principles and architecture boundary |
+| [Docs](https://www.permra.com/docs) | Code-oriented hero and reading/navigation layout |
+| [Pricing](https://www.permra.com/pricing) | Clear commercial layout with pricing, usage explanation and FAQ |
+| [Company](https://www.permra.com/company) | Large mission statement with a separate identity panel |
+| [Sign in](https://www.permra.com/sign-in) | Split dark/light access composition |
+| [Request access](https://www.permra.com/request-demo) | Focused dark-background conversion page and pale form |
+| [Contact](https://www.permra.com/contact) | Topic-based enquiry form and clear editorial introduction |
+| [Funding article](https://www.permra.com/news/permra-funding-announcement) | Editorial article with milestone summary; not a reason to invent funding content for LeakEvidence |
+
+These pages were inspected as design references. Their company/marketing claims were not independently validated and are not reused as LeakEvidence claims. No forms were submitted or accounts accessed.
+
+## 4. Research sources and claim boundaries
+
+Research used the configured Perplexity research tool's high preset. The following official sources support the narrow context below. Original brief citation numbers [13], [14], [15] did not include a bibliography; these direct sources replace unverifiable numeric references in the proposed website copy.
+
+| Official source | Supports | Does not establish |
+|---|---|---|
+| [EPA — Water Audits and Water Loss Control for Public Water Systems](https://www.epa.gov/sites/default/files/2015-04/documents/epa816f13002.pdf) | Real/apparent loss distinctions; NRW includes unbilled authorized consumption; audit, intervention and evaluation framing | LeakEvidence accuracy, regulatory approval, savings or local field performance |
+| [FIDO — Leak Locate](https://fido.tech/products/leak-locate/) | Vendor-described acoustic sensing/analysis, localization and repair-validation offering; adjacent competition exists | Head-to-head performance or superiority of LeakEvidence |
+| [Xylem Vue — water utility management](https://www.xylem.com/en-vn/brand/vue/platform/water-utility-management-software/) | Vendor-described modular water-loss and AMI-related applications | Integration compatibility, commercial partnership or validation of this concept |
+| [Xylem — systematic NRW reduction](https://www.xylem.com/en-uk/making-waves/water-utilities-news/how-utilities-can-systemically-reduce-non-revenue-water/) | Meter/billing accuracy and physical loss are distinct parts of NRW work | Any quantified LeakEvidence improvement or accepted price |
+
+Interpretation for this design: water accounting must distinguish measured inputs, estimates and classifications; an anomaly or residual is not automatically physical leakage. This is a proposed application of the source context to the interface, not an EPA-endorsed software specification.
+
+### Typography sources
+
+| Typeface | Official source/license | Implementation note |
+|---|---|---|
+| Newsreader | [Production Type repository](https://github.com/productiontype/Newsreader), [OFL](https://github.com/productiontype/Newsreader/blob/master/OFL.txt) | Preserve license and copyright notices with selected files |
+| Manrope, Google Fonts release | [Google Fonts repository](https://github.com/googlefonts/manrope), [release OFL](https://github.com/google/fonts/blob/main/ofl/manrope/OFL.txt) | Specify this release rather than assuming all Manrope downloads share its terms |
+| Manrope V5 distinction | [Designer release and license](https://www.sharanda.com/manrope) | Different license; not the proposed release in this plan |
+| IBM Plex Mono | [IBM repository](https://github.com/ibm/plex), [license](https://github.com/IBM/plex/blob/master/LICENSE.txt) | Preserve relevant notices and respect reserved naming restrictions |
+
+## 5. Design and implementation acceptance gates
+
+### Gate A — brand and content
+
+- Original LeakEvidence logo, favicon and variants exist; no legal ownership claim inferred.
+- Five module names and jobs appear on home, menu, index, dedicated page, pricing and intake.
+- Every price preserves its supplied amount/unit and clearly says test hypothesis.
+- Every public route has substantive, page-specific copy and visual content.
+- No copied Permra artwork, UI, card sequence, claims or company details.
+- No invented customers, partnerships, funding, certifications, headquarters or live integrations.
+- LinkedIn/Crunchbase states reflect actual verified destinations.
+
+### Gate B — product evidence
+
+- All demo screens, charts, rows and exports carry DEMO/SYNTHETIC and concept status.
+- Queue counts derive from the ten seed cases and match reports.
+- Observed/recorded times, units, quality flags and source locators remain visible.
+- The 20 October trend and 19 October reconciliation period are not silently conflated.
+- Suspected/verified and workflow/evidence states remain separate.
+- C01 stays suspected; C04/C09 historical confirmation is explicitly simulated.
+- Missing values remain missing; alternative explanations and the failed recommendation are visible.
+- Reviewer changes are local only; no dispatch, valve control, writeback or production connectors.
+- Exports remain readable outside the demo and retain watermarks and provenance.
+
+### Gate C — interaction and responsive QA
+
+- Test 1440, 1024, 768, 390 and 320px widths plus short desktop heights.
+- Test keyboard, touch, focus return, menus, form validation and every CTA destination.
+- Test scroll down/up, direct anchors, reloads and route transitions.
+- No blank critical text, stuck pins, offscreen focused controls or sideways page overflow.
+- Reduced motion shows complete final content with normal vertical flow.
+- All chart/map information has a readable summary/table alternative.
+- Measure color contrast; do not rely on palette intent.
+- Test image/font loading and low-power fallback; no layout-shifting media.
+- Review required screenshots at 100% zoom with mobile-safe provenance labels.
+
+### Gate D — commercial and operational honesty
+
+- Unconnected forms say nothing was sent; connected forms report success only after verified delivery.
+- No fake sign-in, SSO, reset email, booking, payment or CRM pipeline claim.
+- Follow-up and marketing consent are separate and unchecked by default.
+- No operational/customer data in public forms, demo or analytics.
+- Actual privacy controller, processor, retention and deletion details are completed before real collection.
+- Event instrumentation distinguishes view, click, local demo action, delivered enquiry and real booking.
+- Pilot sponsor, operator, data owner and crew lead are tracked separately.
+- Evaluation has comparator, representative negatives, visit budget, evaluator, window, threshold and cost.
+- Go/no-go gates preserve procurement/legal/permission and human physical control.
+
+### Gate E — later engineering and launch
+
+- Production build, type checks and relevant behavior checks pass.
+- All routes, assets, metadata, social preview, favicon and 404 are verified.
+- No template marks, broken placeholders, secrets or personal filesystem paths in deployed code.
+- Actual browser screenshots exist; generated artwork is not labeled as product implementation evidence.
+- README explains local run/build, environment variables, integration boundaries and remaining gaps.
+- GitHub, Vercel and custom domain are handled only in the later authorized build/release scope.
+- Final review runs on the actual deployed URL; domain ownership and branding are separately verified.
+
+## 6. Current handoff status
+
+**Completed in this task:** reference/media study; official-source research; proposed brand direction; product inventory; complete IA; homepage copy/storyboard; all-page hero and content plans; motion/responsive rules; synthetic case and ten-record specification; data dictionary; sample evidence packet; pilot ask/scorecard; form/disclaimer/analytics/ad plans; screenshot brief; requirement coverage.
+
+**Not performed or claimed:** logo/favicons drawn; high-fidelity design assets; product or website code; real demo captures; site accessibility/performance testing; lead collection; campaigns; account creation; Notion changes; production data access; legal or trademark review; name/domain purchase; GitHub push; deployment; customer/pilot validation.
+
+**Inputs required for a future real launch, without blocking this specification:** verified company/domain ownership; approved logo assets; real profile/contact URLs; legal entity and privacy facts; configured form recipient/service; chosen repository/hosting/domain; approved licensed assets; production permissions if a later paid pilot proceeds. These are not needed to build the isolated synthetic prototype itself.

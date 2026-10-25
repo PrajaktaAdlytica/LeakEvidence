@@ -1,0 +1,12 @@
+{
+  "district": {
+    "prompt": "Use case: illustration-story. Create an original premium architectural evidence-atlas illustration for LeakEvidence, a water utility evidence website. Single isolated axonometric cutaway of a small fictional water district with 5 limestone buildings, a water tower, curved streets, a grove of tiny trees and a deep cut earth block exposing a restrained dark mineral-green water pipe network underground. Fine graphite survey drawing, hand-engraved detail, warm limestone washes, copper pipe junction accents, finely crafted physical architectural model photographed on seamless warm ivory #F5F2EA paper. Landscape 3:2 composition. District model fills the frame, dynamic diagonal composition with generous breathing room at edges; no text, labels, UI, pins, arrows, logo or watermark. The pipes are intact, no visible leak, no damaged assets. Refined editorial illustration, believable engineering details without claiming technical drawing accuracy. Natural soft shadows; not cartoon, not futuristic, no blue gradients. This is standalone artwork, not a web page or screenshot.",
+    "output": "dist/assets/district.webp",
+    "method": "OpenAI image generation; original fictional illustration"
+  },
+  "instruments": {
+    "prompt": "Use case: product-mockup. Wide 16:9 cinematic editorial still life for LeakEvidence technical inner pages: three real-looking generic water-utility field instruments arranged on dark charcoal workbench: brushed stainless steel pressure gauge with unlabeled fine ticks, a compact ivory water meter, and a slender metal acoustic listening probe with cable. An archival calibration worksheet beneath, no legible words or numbers. Close oblique angle, exquisite material realism, subtle aged brass details, soft directional museum light, deep shadows, restrained warm olive glints. Premium industrial instrument room, calm and exact, beautiful physical texture. No brand logos, readable text, hands, display UI, live data, flashy colors or futuristic hardware. Leave left upper quarter mostly dark empty negative space. Single photo-like image, not website, no collage borders.",
+    "output": "dist/assets/instruments.webp",
+    "method": "OpenAI image generation; original fictional instruments"
+  }
+}

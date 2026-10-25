@@ -1,0 +1,3 @@
+Generated with the built-in image_gen tool; saved as dist/assets/mineral-wash-v4.png.
+
+Create a seamless tileable square background texture for a premium water utility engineering editorial website. Flat scan of pale natural limestone mineral plaster with soft watercolor mineral blooms, fine chalk sediment, subtle organic mottling. Neutral warm grey cream monochrome only, very low contrast, even lighting, no shadows, no gradients, no objects, no symbols, no letters, no text. Fine natural tactile surface rather than noisy distressed grunge. Must support clear black text over it, and CSS color tinting. Texture extends uniformly to all four edges. Output one square texture asset.

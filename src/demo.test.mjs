@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {summary,counts,reviewCase,packet,LABEL} from './demo-model.mjs';
+const seed=JSON.parse(readFileSync(new URL('../dist/assets/seed.json',import.meta.url)));
+test('synthetic measurements preserve missingness and reconcile expected means',()=>assert.deepEqual(summary(seed),{first:110.5,last:139.5,difference:29,available:7,expected:8}));
+test('queue counts derive from ten records',()=>assert.deepEqual(counts(seed.cases),{total:10,pending:4,blocked:2,completed:2,rejected:2}));
+test('review completion cannot confirm suspected leakage',()=>{const r=reviewCase(seed.cases[0],'Meter factor unresolved');assert.equal(r.workflow,'completed');assert.equal(r.evidence,'suspected');assert.equal(seed.cases[0].workflow,'pending');});
+test('blocked and historical records cannot use the review shortcut',()=>{assert.throws(()=>reviewCase(seed.cases[2],'reason'));assert.throws(()=>reviewCase(seed.cases[3],'reason'));assert.throws(()=>reviewCase(seed.cases[0],' '));});
+test('packet retains provenance and null sample without inventing evidence for other cases',()=>{const p=packet(seed,seed.cases[0]);assert.equal(p.demo_label,LABEL);assert.equal(p.evidence.length,7);assert.equal(p.measurements.pressure_bar[5],null);assert.equal(p.case.evidence,'suspected');assert.equal(packet(seed,seed.cases[4]).measurements,null);});

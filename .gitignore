@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+.openai/
+work/
+__pycache__/
+*.pyc
+*.zip
+.env
+.env.*
+.vercel/
